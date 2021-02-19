@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+import logo from './trt_logo.png';
 import './App.css';
-import AudioAnalyser from "react-audio-analyser"
+// import AudioAnalyser from "react-audio-analyser"
 
 
 function App() {
@@ -9,19 +9,12 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Soon to be React Web radio.
+          The Rave Theory radio coming soon.
         </p>
-        <audio controls>
-          <source src="http://100.14.199.85:8001/stream"></source>
+        <audio controls id="stream-player">
+          <source src="https://theravetheory.evan-savage.com:8000/stream" type="audio/mpeg"></source>
         </audio>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
       </header>
     </div>
   );
