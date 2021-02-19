@@ -1,6 +1,7 @@
 import logo from './trt_logo.png';
+import './Fonts.css';
 import './App.css';
-// import AudioAnalyser from "react-audio-analyser"
+import AudioPlayer from './AudioPlayer.js';
 
 
 function App() {
@@ -11,10 +12,7 @@ function App() {
         <p>
           The Rave Theory radio coming soon.
         </p>
-        <audio controls id="stream-player">
-          <source src="https://theravetheory.evan-savage.com:8000/stream" type="audio/mpeg"></source>
-        </audio>
-
+        <AudioPlayer />
       </header>
     </div>
   );

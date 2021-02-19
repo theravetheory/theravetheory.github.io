@@ -15,14 +15,15 @@
 }
 
 .App-header {
-  background-color: #574934;
+  background-color: #dbd9d2;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  font-family: catv;
 }
 
 .App-link {
@@ -31,6 +32,19 @@
 
 #stream-player {
   margin-top: 30px;
+
+}
+
+#stream-player:focus {
+  outline: none;
+}
+
+audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
+  background-color: #dbd9d2;
+}
+
+audio::-webkit-media-controls-panel:focus {
+  outline: none;
 }
 
 @keyframes App-logo-spin {
