@@ -1,9 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
 
-// import $ from 'jquery';
-// import AudioAnalyser from "react-audio-analyser"
-
 class AudioPlayer extends React.Component {
   constructor(props) {
     super(props);
@@ -23,27 +20,29 @@ class AudioPlayer extends React.Component {
       });
       console.log('stream', this.state);
     });
-    $.getJSON(this.props.streamurl + "/status-json.xsl", (data) => {
-      if (data !== null) {
-        console.log(data.icestats.source.server_name);
-        this.setState({
-          serverName: data.icestats.source.server_name,
-          serverDescription: data.icestats.source.server_description,
-          serverGenre: data.icestats.source.genre,
-        });
-        console.log('status', this.state);
+    $.getJSON({
+      url: this.props.streamurl + "/status-json.xsl",
+      success: (data, status, xhr) => {
+        console.log(xhr)
+        if (data.icestats.source) {
+          this.setState({
+            serverName: data.icestats.source.server_name,
+            serverDescription: data.icestats.source.server_description,
+            serverGenre: data.icestats.source.genre,
+          });
+        }
+      },
+      error: function(data) {
+        console.log('there was an error');
       }
-    });
+    })
   }
   render() {
-    const name = this.state.serverName;
     const status = this.state.status;
-    const description = this.state.serverDescription;
-    const genre = this.state.serverGenre;
     console.log(this.state);
     if (status === 200) {
       return (
-        <AudioEmbed name={name} genre={genre} description={description}/>
+        <AudioEmbed name={this.state.serverName} genre={this.state.serverDescription} description={this.state.serverGenre}/>
       )
     } else if (status === 404) {
       return <p> The stream is not available currently. </p>;

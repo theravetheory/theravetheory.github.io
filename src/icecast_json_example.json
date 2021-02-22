@@ -1,0 +1,39 @@
+{
+   "icestats":{
+      "admin":"icemaster@localhost",
+      "host":"3.133.149.91",
+      "location":"Earth",
+      "server_id":"Icecast 2.4.4",
+      "server_start":"Fri, 19 Feb 2021 15:36:36 +0000",
+      "server_start_iso8601":"2021-02-19T15:36:36+0000",
+      "source":{
+         "audio_info":"ice-bitrate=128;ice-channels=2;ice-samplerate=44100",
+         "genre":"Techno",
+         "ice-bitrate":128,
+         "ice-channels":2,
+         "ice-samplerate":44100,
+         "listener_peak":0,
+         "listeners":0,
+         "listenurl":"http://3.133.149.91:8000/stream",
+         "server_description":"This is a test server",
+         "server_name":"Test Server",
+         "server_type":"audio/mpeg",
+         "server_url":"192.168.1.194",
+         "stream_start":"Mon, 22 Feb 2021 15:52:12 +0000",
+         "stream_start_iso8601":"2021-02-22T15:52:12+0000",
+         "dummy":null
+      }
+   }
+}
+
+{
+   "icestats":{
+      "admin":"icemaster@localhost",
+      "host":"3.133.149.91",
+      "location":"Earth",
+      "server_id":"Icecast 2.4.4",
+      "server_start":"Fri, 19 Feb 2021 15:36:36 +0000",
+      "server_start_iso8601":"2021-02-19T15:36:36+0000",
+      "dummy":null
+   }
+}
