@@ -1,9 +1,28 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
 // import ReactDOM from 'react-dom';
-import Play from './Play.js';
-import Pause from './Pause.js';
+import PlayPause from './PlayPause.js';
 import useAudioPlayer from './useAudioPlayer.js';
+import equal from 'fast-deep-equal';
+
+
+function AudioEmbed() {
+  const { playing, setPlaying } = useAudioPlayer();
+  const isplaying = false;
+  return (
+    <>
+    <audio controls id="stream-player">
+      <source src="https://theravetheory.evan-savage.com:8000/stream" type="audio/mpeg"></source>
+    </audio>
+    <div className="scroll-left">
+      <p>This is a test</p>
+    </div>
+    <div className="player-controls">
+      <PlayPause isplaying={isplaying}/>
+    </div>
+    </>
+  );
+}
 
 export default class AudioPlayer extends Component {
   constructor(props) {
@@ -59,24 +78,4 @@ export default class AudioPlayer extends Component {
     }
   }
 
-}
-
-function AudioEmbed() {
-  const { playing, setPlaying } = useAudioPlayer();
-  return (
-    <>
-    <audio controls id="stream-player">
-      <source src="https://theravetheory.evan-savage.com:8000/stream" type="audio/mpeg"></source>
-    </audio>
-    <div className="scroll-left">
-      <p>This is a test</p>
-    </div>
-    <div className="player-controls">
-      {playing ?
-        <Pause handleClick={() => setPlaying(false)} /> :
-        <Play handleClick={() => setPlaying(true)} />
-      }
-    </div>
-    </>
-  );
 }

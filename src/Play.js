@@ -1,11 +1,10 @@
 import React from "react";
 import playbutton from './play.svg';
+import $ from 'jquery';
 
-export default function Play(props) {
-  const { handleClick } = props;
-
+export default function Play({onPlayerClick}) {
   return (
-    <button className="player__button" onClick={() => handleClick()}>
+    <button className="player__button" onClick={onPlayerClick}>
       <img src={playbutton} alt="play button"/>
     </button>
   );
