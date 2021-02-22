@@ -1,4 +1,8 @@
-$hud-background-color: #b3b3b3;
+$hud-background-color: black;
+$background-color: black;
+
+$hud-text-green: #04ed00; // GREEN
+$hud-text-yellow: #feef49;
 
 .App {
   text-align: center;
@@ -7,19 +11,63 @@ $hud-background-color: #b3b3b3;
 .app-wrapper {
   min-height: 100vh;
   min-width: 100vw;
-  background-color: #dbd9d2;
+  background-color: $background-color;
   .nav-wrapper {
-    padding: 20px;
+    // padding: 10px 0 8px 10px;
     background-color: $hud-background-color;
     position: absolute;
     bottom: 0;
     width: 100%;
     .icon-container {
-      width: 120px;
+      margin: 10px 0 8px 14px;
+      width: 200px;
+      // animation: App-logo-spin 3s 0s infinite;
+      // animation-direction: alternate;
+      // background-color: black;
+      // padding: 10px;
       .App-logo {
         max-width: 100%;
         height: auto;
       }
+    }
+  }
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: catv;
+  .icon-container {
+    padding-right: 20px;
+  }
+  .scroll-left {
+    flex: 1;
+    font-size: 1.5rem;
+    color: $hud-text-green;
+    border-left: 3px solid $hud-text-green;
+    // border-right: 3px solid $hud-text-green;
+    border-top: 3px solid $hud-text-green;
+    border-radius: 3px 0px 0 0;
+  }
+  .player-controls {
+    width: 100px;
+    // padding-left: 20px;
+    // margin-left: 20px;
+    // border-left: 3px solid $hud-text-green;
+    // border-right: 3px solid $hud-text-green;
+    border-top: 3px solid $hud-text-green;
+    // border-radius: 3px 0 0 0;
+    height: 50px;
+    position: relative;
+    button {
+      height: 50px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
@@ -35,7 +83,7 @@ $hud-background-color: #b3b3b3;
 }
 
 .App-header {
-  background-color: #dbd9d2;
+  // background-color: #dbd9d2;
   // min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -51,8 +99,8 @@ $hud-background-color: #b3b3b3;
 }
 
 #stream-player {
-  margin-top: 30px;
-
+  // margin-top: 30px;
+  display: none;
 }
 
 #stream-player:focus {
@@ -69,9 +117,9 @@ audio::-webkit-media-controls-panel:focus {
 
 @keyframes App-logo-spin {
   from {
-    transform: rotateY(-30deg);
+    transform: rotateY(-30deg) translateY(10px);
   }
   to {
-    transform: rotateY(30deg);
+    transform: rotateY(30deg) translateY(0px);
   }
 }

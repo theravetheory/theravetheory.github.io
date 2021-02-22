@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import $ from 'jquery';
+// import ReactDOM from 'react-dom';
+import Play from './Play.js';
+import Pause from './Pause.js';
+import useAudioPlayer from './useAudioPlayer.js';
 
-class AudioPlayer extends React.Component {
+export default class AudioPlayer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,14 +39,16 @@ class AudioPlayer extends React.Component {
       error: function(data) {
         console.log('there was an error');
       }
-    })
+    });
   }
+
   render() {
     const status = this.state.status;
-    console.log(this.state);
+
+    // console.log(element);
     if (status === 200) {
       return (
-        <AudioEmbed name={this.state.serverName} genre={this.state.serverDescription} description={this.state.serverGenre}/>
+        <AudioEmbed/>
       )
     } else if (status === 404) {
       return <p> The stream is not available currently. </p>;
@@ -55,17 +61,22 @@ class AudioPlayer extends React.Component {
 
 }
 
-class AudioEmbed extends React.Component {
-  render () {
-    return (
-      <>
-      <audio controls id="stream-player">
-        <source src="https://theravetheory.evan-savage.com:8000/stream" type="audio/mpeg"></source>
-      </audio>
-      <p>{this.props.name}, {this.props.description}, {this.props.genre}</p>
-      </>
-    );
-  }
+function AudioEmbed() {
+  const { playing, setPlaying } = useAudioPlayer();
+  return (
+    <>
+    <audio controls id="stream-player">
+      <source src="https://theravetheory.evan-savage.com:8000/stream" type="audio/mpeg"></source>
+    </audio>
+    <div className="scroll-left">
+      <p>This is a test</p>
+    </div>
+    <div className="player-controls">
+      {playing ?
+        <Pause handleClick={() => setPlaying(false)} /> :
+        <Play handleClick={() => setPlaying(true)} />
+      }
+    </div>
+    </>
+  );
 }
-
-export default AudioPlayer;
