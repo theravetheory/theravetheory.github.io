@@ -2,7 +2,6 @@ import logo from './trt_logo.png';
 import './Fonts.css';
 import './App.scss';
 import './Scroll.scss';
-import * as THREE from 'three'
 import AudioPlayer from './AudioPlayer.js';
 import HomeBkgd from './VantaBkgd.js'
 
