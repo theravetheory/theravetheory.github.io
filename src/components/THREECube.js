@@ -8,7 +8,7 @@ class ThreeCube extends Component {
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera( 40, 1);
     var renderer = new THREE.WebGLRenderer({antialias:true, alpha: true});
-    renderer.setSize(100, 100);
+    renderer.setSize(90, 90);
     // document.body.appendChild( renderer.domElement );
     this.mount.appendChild(renderer.domElement);
     var geometry = new THREE.BoxGeometry( 10, 9, 10 );
