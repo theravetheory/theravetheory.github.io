@@ -19,10 +19,10 @@ class HomeBkgd extends React.Component {
       scaleMobile: 1.00,
       color: 0x04ed00,
       points: 10.00,
-      maxDistance: 20.00,
-      spacing: 20.00,
-      backgroundColor: 0x000000,
-      showDots: false,
+      maxDistance: 18.00,
+      spacing: 5.00,
+      backgroundColor: 0x727478,
+      showDots: true,
     })
   }
   componentWillUnmount() {
