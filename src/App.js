@@ -1,6 +1,6 @@
 import logo_small from './logos/trt_logo_small.png';
-import logosquaresmall from './logos/trtsquaresmall.png';
-import icon from './logos/trt_favicon.png';
+// import logosquaresmall from './logos/trtsquaresmall.png';
+// import icon from './logos/trt_favicon.png';
 import './Fonts.css';
 import './scss/App.scss';
 import './scss/Scroll.scss';

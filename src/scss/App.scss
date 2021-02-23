@@ -23,7 +23,8 @@ html, body, #root {
 }
 
 .vanta-background {
-  height: 100%;
+  height: calc(100% + 100px);
+  margin-top: -100px;
 }
 
 .three-cube {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import * as THREE from "three";
-import $ from 'jquery';
+// import $ from 'jquery';
 
 class ThreeCube extends Component {
   componentDidMount() {
@@ -14,7 +14,7 @@ class ThreeCube extends Component {
     var geometry = new THREE.BoxGeometry( 10, 9, 10 );
     var material = new THREE.MeshBasicMaterial();
     var cube = new THREE.Mesh( geometry, material );
-    var tex = new THREE.TextureLoader().load(
+    new THREE.TextureLoader().load(
       this.props.imagetexture,
       texture => {
         //Update Texture
