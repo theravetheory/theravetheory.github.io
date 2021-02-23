@@ -6,12 +6,12 @@ import $ from 'jquery';
 class ThreeCube extends Component {
   componentDidMount() {
     var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera( 90, 1);
+    var camera = new THREE.PerspectiveCamera( 40, 1);
     var renderer = new THREE.WebGLRenderer({antialias:true, alpha: true});
     renderer.setSize(50, 50);
     // document.body.appendChild( renderer.domElement );
     this.mount.appendChild(renderer.domElement);
-    var geometry = new THREE.BoxGeometry( 10, 10, 10 );
+    var geometry = new THREE.BoxGeometry( 10, 9, 10 );
     var material = new THREE.MeshBasicMaterial();
     var cube = new THREE.Mesh( geometry, material );
     var tex = new THREE.TextureLoader().load(
@@ -32,7 +32,7 @@ class ThreeCube extends Component {
       }
     );
     scene.add( cube );
-    camera.position.z = 10;
+    camera.position.z = 20;
     var animate = function () {
       requestAnimationFrame( animate );
       // cube.rotation.x += 0.01;

@@ -1,12 +1,12 @@
-import logo from './trt_logo.png';
-import logosquaresmall from './trtsquaresmall.png';
-import icon from './trt_favicon.png';
+import logo_small from './logos/trt_logo_small.png';
+import logosquaresmall from './logos/trtsquaresmall.png';
+import icon from './logos/trt_favicon.png';
 import './Fonts.css';
-import './App.scss';
-import './Scroll.scss';
-import AudioPlayer from './AudioPlayer.js';
-import HomeBkgd from './VantaBkgd.js';
-import ThreeCube from './THREECube.js';
+import './scss/App.scss';
+import './scss/Scroll.scss';
+import AudioPlayer from './components/AudioPlayer.js';
+import HomeBkgd from './components/VantaBkgd.js';
+import ThreeCube from './components/THREECube.js';
 
 
 function App() {
@@ -17,11 +17,8 @@ function App() {
 
       <div className="nav-wrapper">
         <nav className="navbar">
-          {// <div className="icon-container">
-          // </div>
-          }
           <div className="icon-container">
-            <ThreeCube imagetexture={logo}/>
+            <ThreeCube imagetexture={logo_small}/>
           </div>
           <AudioPlayer streamurl={stream_url}/>
         </nav>
