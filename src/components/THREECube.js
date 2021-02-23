@@ -33,6 +33,7 @@ class ThreeCube extends Component {
     );
     scene.add( cube );
     camera.position.z = 20;
+    camera.position.y = 2;
     var animate = function () {
       requestAnimationFrame( animate );
       // cube.rotation.x += 0.01;
