@@ -76,7 +76,10 @@ export default class AudioPlayer extends Component {
       )
     } else {
       return (
-        <p> Loading... </p>
+        <div className="scroll-left">
+          <p> Loading... </p>
+        </div>
+
       );
     }
   }
