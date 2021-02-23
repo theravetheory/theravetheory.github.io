@@ -4,6 +4,9 @@ $background-color: black;
 $hud-text-green: #04ed00; // GREEN
 $hud-text-yellow: #feef49;
 
+html {
+  overflow-y: hidden;
+}
 .App {
   text-align: center;
 }
@@ -15,14 +18,14 @@ $hud-text-yellow: #feef49;
 .three-cube {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -15px;
   // width: 100px;
   z-index: 400;
   padding-left: 20px;
-  border-top: 3px solid $hud-text-green;
-  border-right: 3px solid $hud-text-green;
-  border-radius: 0 6px 0 0;
-  padding-right: 20px;
+  // border-top: 3px solid $hud-text-green;
+  // border-right: 3px solid $hud-text-green;
+  // border-radius: 0 6px 0 0;
+  // padding-right: 20px;
 }
 
 .app-wrapper {
