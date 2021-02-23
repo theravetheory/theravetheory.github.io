@@ -5,8 +5,17 @@ $hud-text-green: #04ed00; // GREEN
 $hud-text-yellow: #feef49;
 
 html {
+
+}
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+html {
+  height: -webkit-fill-available;
   overflow-y: hidden;
 }
+
 .App {
   text-align: center;
 }
