@@ -8,34 +8,46 @@ $hud-text-yellow: #feef49;
   text-align: center;
 }
 
+.vanta-background {
+  height: 100vh;
+}
+
 .app-wrapper {
   min-height: 100vh;
   min-width: 100vw;
   background-color: $background-color;
   .nav-wrapper {
     // padding: 10px 0 8px 10px;
-    background-color: $hud-background-color;
+    background-color: transparent;
     position: absolute;
     bottom: 0;
     width: 100%;
-    .icon-container {
-      margin: 10px 0 8px 14px;
-      width: 200px;
-      // animation: App-logo-spin 3s 0s infinite;
-      // animation-direction: alternate;
-      // background-color: black;
-      // padding: 10px;
-      .App-logo {
-        max-width: 100%;
-        height: auto;
-      }
-    }
+
+  }
+}
+
+.icon-container {
+  // margin: 10px 0 8px 14px;
+  width: 70px;
+  margin-right: auto;
+  margin-left: 20px;
+  // position: absolute;
+  // top: 0;
+  // animation: App-logo-spin 3s 0s infinite;
+  // animation-direction: alternate;
+  // background-color: black;
+  // padding: 10px;
+  .App-logo {
+    max-width: 100%;
+    height: auto;
+    // opacity: 0.4;
   }
 }
 
 .navbar {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
   font-family: catv;
   .icon-container {
@@ -43,6 +55,8 @@ $hud-text-yellow: #feef49;
   }
   .scroll-left {
     flex: 1;
+    margin-left: 50px;
+    max-width: 700px;
     font-size: 1.5rem;
     color: $hud-text-green;
     border-left: 3px solid $hud-text-green;

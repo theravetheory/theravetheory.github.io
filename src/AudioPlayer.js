@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import $ from 'jquery';
 // import ReactDOM from 'react-dom';
 import PlayPause from './PlayPause.js';
-import useAudioPlayer from './useAudioPlayer.js';
-import equal from 'fast-deep-equal';
+// import useAudioPlayer from './useAudioPlayer.js';
 
 
-function AudioEmbed() {
-  const { playing, setPlaying } = useAudioPlayer();
+function AudioEmbed(name, description, genre) {
+  // const { playing, setPlaying } = useAudioPlayer();
   const isplaying = false;
   return (
     <>
@@ -15,7 +14,7 @@ function AudioEmbed() {
       <source src="https://theravetheory.evan-savage.com:8000/stream" type="audio/mpeg"></source>
     </audio>
     <div className="scroll-left">
-      <p>This is a test</p>
+      <p>Now playing: {name} - {description} [{genre}]</p>
     </div>
     <div className="player-controls">
       <PlayPause isplaying={isplaying}/>
@@ -67,10 +66,14 @@ export default class AudioPlayer extends Component {
     // console.log(element);
     if (status === 200) {
       return (
-        <AudioEmbed/>
+        AudioEmbed(this.state.serverName, this.state.serverDescription, this.state.serverGenre)
       )
     } else if (status === 404) {
-      return <p> The stream is not available currently. </p>;
+      return (
+        <div className="scroll-left">
+          <p>The stream is not currently available</p>
+        </div>
+      )
     } else {
       return (
         <p> Loading... </p>

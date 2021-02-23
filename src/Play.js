@@ -1,6 +1,5 @@
 import React from "react";
 import playbutton from './play.svg';
-import $ from 'jquery';
 
 export default function Play({onPlayerClick}) {
   return (
