@@ -134,6 +134,9 @@ html, body, #root {
   font-size: calc(10px + 2vmin);
   color: black;
   font-family: catv;
+  z-index: 10;
+  position: absolute;
+  top: 0;
 }
 
 .App-link {
