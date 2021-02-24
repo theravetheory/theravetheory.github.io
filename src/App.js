@@ -22,10 +22,10 @@ function UserDetail({ user, username, setUser}) {
   }
   return (
     <>
-    <div>
-      <h1>Logged in with anonymous id: {user.id} and username {username}</h1>
-    </div>
-    <button onClick={logoutAnonymous}>Log Out</button>
+      <div>
+        <h1>Logged in with anonymous id: {user.id} and username {username}</h1>
+      </div>
+      <button onClick={logoutAnonymous}>Log Out</button>
     </>
   );
 }
@@ -37,24 +37,13 @@ function Login({ setUser, setUserName }) {
     setUserName($('#login-name input').val());
     const user = await app.logIn(Realm.Credentials.anonymous());
     setUser(user);
-
-
   };
   return (
     <>
-    <label id="login-name"> Name: <input type="text"/></label>
-    <button onClick={loginAnonymous}>Log In</button>
+      <label id="login-name"> Name: <input type="text"/></label>
+      <button onClick={loginAnonymous}>Log In</button>
     </>
   );
-  // return (
-  //     <form >
-  //       <label>
-  //         Name:
-  //         <input type="text"  />
-  //       </label>
-  //       <input type="submit" value="Login" onClick={loginAnonymous}/>
-  //     </form>
-  //   );
 }
 
 
@@ -76,7 +65,8 @@ function App() {
       </div>
       <div>
         <header className="App-header">
-          {user ? <UserDetail user={user} username={username} setUser={setUser}/> : <Login setUser={setUser} setUserName={setUserName}/>}
+          {// {user ? <UserDetail user={user} username={username} setUser={setUser}/> : <Login setUser={setUser} setUserName={setUserName}/>}
+          }
         </header>
       </div>
 
