@@ -71,7 +71,7 @@ export default class AudioPlayer extends Component {
     } else if (status === 404) {
       return (
         <div className="scroll-left">
-          <p>The stream is not currently available</p>
+          <p>Donate to <a href="mailto:theravetheory0@gmail.com">theravetheory</a></p>
         </div>
       )
     } else {

@@ -1923,6 +1923,61 @@
     "@typescript-eslint/types" "4.14.2"
     "eslint-visitor-keys" "^2.0.0"
 
+"@videojs/http-streaming@^2.6.2":
+  "integrity" "sha512-7e3M3BCqVActxpeyUfzFqVtB0guDBs8h9yAdYWJeRvhgro1mBYe+j2qPl9B5CLkyjd9Risuw63zpbU5u4APugw=="
+  "resolved" "https://registry.npmjs.org/@videojs/http-streaming/-/http-streaming-2.6.2.tgz"
+  "version" "2.6.2"
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "@videojs/vhs-utils" "^3.0.0"
+    "aes-decrypter" "3.1.2"
+    "global" "^4.4.0"
+    "m3u8-parser" "4.5.2"
+    "mpd-parser" "0.15.4"
+    "mux.js" "5.9.2"
+    "video.js" "^6 || ^7"
+
+"@videojs/http-streaming@2.4.2":
+  "integrity" "sha512-yXT85ao2t9Sg/aQN2MV1AYikoRToxCaHD8rRR1+SuOWOv9+z8+M4X9ZvxIdFF3pFgZ67Widp/6xyRrDn2u2QWQ=="
+  "resolved" "https://registry.npmjs.org/@videojs/http-streaming/-/http-streaming-2.4.2.tgz"
+  "version" "2.4.2"
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "@videojs/vhs-utils" "^2.3.0"
+    "aes-decrypter" "3.1.0"
+    "global" "^4.4.0"
+    "m3u8-parser" "4.5.0"
+    "mpd-parser" "0.15.0"
+    "mux.js" "5.8.0"
+    "video.js" "^6 || ^7"
+
+"@videojs/vhs-utils@^2.2.1", "@videojs/vhs-utils@^2.3.0":
+  "integrity" "sha512-ThSmm91S7tuIJ757ON50K4y7S/bvKN4+B0tu303gCOxaG57PoP1UvPfMQZ90XGhxwNgngexVojOqbBHhTvXVHQ=="
+  "resolved" "https://registry.npmjs.org/@videojs/vhs-utils/-/vhs-utils-2.3.0.tgz"
+  "version" "2.3.0"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "global" "^4.3.2"
+    "url-toolkit" "^2.1.6"
+
+"@videojs/vhs-utils@^3.0.0":
+  "integrity" "sha512-HPgiaVB8/g7DooYFQ20uTinq4eNRHmIXGHHttK/Xwyvn19MfIpg9BfMNr9ywCvgHh0IUGrxt6P8AcmMO4xvxIA=="
+  "resolved" "https://registry.npmjs.org/@videojs/vhs-utils/-/vhs-utils-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "global" "^4.4.0"
+    "url-toolkit" "^2.2.1"
+
+"@videojs/xhr@2.5.1":
+  "integrity" "sha512-wV9nGESHseSK+S9ePEru2+OJZ1jq/ZbbzniGQ4weAmTIepuBMSYPx5zrxxQA0E786T5ykpO8ts+LayV+3/oI2w=="
+  "resolved" "https://registry.npmjs.org/@videojs/xhr/-/xhr-2.5.1.tgz"
+  "version" "2.5.1"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "global" "~4.4.0"
+    "is-function" "^1.0.1"
+
 "@webassemblyjs/ast@1.9.0":
   "integrity" "sha512-C6wW5L+b7ogSDVqymbkkvuW9kruN//YisMED04xzeBBqjHa2FYnmvOlS6Xj68xWQRgWvI9cIglsjFowH/RJyEA=="
   "resolved" "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.9.0.tgz"
@@ -2153,6 +2208,26 @@
   dependencies:
     "loader-utils" "^2.0.0"
     "regex-parser" "^2.2.11"
+
+"aes-decrypter@3.1.0":
+  "integrity" "sha512-wL1NFwP2yNrJG4InpXYFhhYe9TfonnDyhyxMq2+K9/qt+SrZzUieOpviN6pkDly7GawTqw5feehk0rn5iYo00g=="
+  "resolved" "https://registry.npmjs.org/aes-decrypter/-/aes-decrypter-3.1.0.tgz"
+  "version" "3.1.0"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@videojs/vhs-utils" "^2.2.1"
+    "global" "^4.3.2"
+    "pkcs7" "^1.0.4"
+
+"aes-decrypter@3.1.2":
+  "integrity" "sha512-42nRwfQuPRj9R1zqZBdoxnaAmnIFyDi0MNyTVhjdFOd8fifXKKRfwIHIZ6AMn1or4x5WONzjwRTbTWcsIQ0O4A=="
+  "resolved" "https://registry.npmjs.org/aes-decrypter/-/aes-decrypter-3.1.2.tgz"
+  "version" "3.1.2"
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "@videojs/vhs-utils" "^3.0.0"
+    "global" "^4.4.0"
+    "pkcs7" "^1.0.4"
 
 "aframe-particle-system-component@^1.1.3":
   "integrity" "sha512-G1qmdre8mrbLTw67jNUr79IRFXxL+Rt++LFC1enhNHFoiyqgvcLsSWJLYhoVdEpTyvM39b1VMM7RjivpW4oBsg=="
@@ -5725,13 +5800,21 @@
     "kind-of" "^6.0.2"
     "which" "^1.3.1"
 
-"global@~4.4.0":
+"global@^4.3.1", "global@^4.4.0", "global@~4.4.0":
   "integrity" "sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w=="
   "resolved" "https://registry.npmjs.org/global/-/global-4.4.0.tgz"
   "version" "4.4.0"
   dependencies:
     "min-document" "^2.19.0"
     "process" "^0.11.10"
+
+"global@^4.3.2", "global@4.3.2":
+  "integrity" "sha1-52mJJopsdMOJCLEwWxD8DjlOnQ8="
+  "resolved" "https://registry.npmjs.org/global/-/global-4.3.2.tgz"
+  "version" "4.3.2"
+  dependencies:
+    "min-document" "^2.19.0"
+    "process" "~0.5.1"
 
 "globals@^11.1.0":
   "integrity" "sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA=="
@@ -6236,6 +6319,11 @@
   "integrity" "sha1-8w9xbI4r00bHtn0985FVZqfAVgc="
   "resolved" "https://registry.npmjs.org/indexes-of/-/indexes-of-1.0.1.tgz"
   "version" "1.0.1"
+
+"individual@^2.0.0":
+  "integrity" "sha1-gzsJfa0jKU52EXqY+zjg2a1hu5c="
+  "resolved" "https://registry.npmjs.org/individual/-/individual-2.0.0.tgz"
+  "version" "2.0.0"
 
 "infer-owner@^1.0.3", "infer-owner@^1.0.4":
   "integrity" "sha512-IClj+Xz94+d7irH5qRyfJonOdfTzuDaifE6ZPWfx0N0+/ATZCbuTPq2prFl526urkQd90WyUKIh1DfBQ2hMz9A=="
@@ -7357,6 +7445,11 @@
     "array-includes" "^3.1.2"
     "object.assign" "^4.1.2"
 
+"keycode@^2.2.0":
+  "integrity" "sha1-PQr1bce4uOXLqNCpfxByBO7CKwQ="
+  "resolved" "https://registry.npmjs.org/keycode/-/keycode-2.2.0.tgz"
+  "version" "2.2.0"
+
 "killable@^1.0.1":
   "integrity" "sha512-LzqtLKlUwirEUyl/nicirVmNiPvYs7l5n8wOPP7fyJVpUPkvCnW/vuiXGpylGUlnPDnB7311rARzAt3Mhswpjg=="
   "resolved" "https://registry.npmjs.org/killable/-/killable-1.0.1.tgz"
@@ -7665,6 +7758,24 @@
   "integrity" "sha1-wNjq82BZ9wV5bh40SBHPTEmNOiY="
   "resolved" "https://registry.npmjs.org/lz-string/-/lz-string-1.4.4.tgz"
   "version" "1.4.4"
+
+"m3u8-parser@4.5.0":
+  "integrity" "sha512-RGm/1WVCX3o1bSWbJGmJUu4zTbtJy8lImtgHM4CESFvJRXYztr1j6SW/q9/ghYOrUjgH7radsIar+z1Leln0sA=="
+  "resolved" "https://registry.npmjs.org/m3u8-parser/-/m3u8-parser-4.5.0.tgz"
+  "version" "4.5.0"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@videojs/vhs-utils" "^2.2.1"
+    "global" "^4.3.2"
+
+"m3u8-parser@4.5.2":
+  "integrity" "sha512-sN/lu3TiRxmG2RFjZxo5c0/7Dr4RrEztl43jXrWwj5gFZ7vfa2iIxGfiPx485dm5QCazaIcKk+vNkUso8Aq0Ag=="
+  "resolved" "https://registry.npmjs.org/m3u8-parser/-/m3u8-parser-4.5.2.tgz"
+  "version" "4.5.2"
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "@videojs/vhs-utils" "^3.0.0"
+    "global" "^4.4.0"
 
 "magic-string@^0.25.0", "magic-string@^0.25.7":
   "integrity" "sha512-4CrMT5DOHTDk4HYDlzmwu4FVCcIYI8gauveasrdCu2IKIFOJ3f0v/8MDGJCDL9oD2ppz/Av1b0Nj345H9M+XIA=="
@@ -8007,6 +8118,26 @@
     "rimraf" "^2.5.4"
     "run-queue" "^1.0.3"
 
+"mpd-parser@0.15.0":
+  "integrity" "sha512-GfspJVaEnVbWKZQASvh9nsJkvxWh3M/c5Kb2RPnN5ZXPZ7jWWfarWkNKTEuqvoaAKIT8IB/r6PFTWA1GY4fzGg=="
+  "resolved" "https://registry.npmjs.org/mpd-parser/-/mpd-parser-0.15.0.tgz"
+  "version" "0.15.0"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@videojs/vhs-utils" "^2.2.1"
+    "global" "^4.3.2"
+    "xmldom" "^0.1.27"
+
+"mpd-parser@0.15.4":
+  "integrity" "sha512-YcOclxKc5gnT87UQYwRoPJpWOFvQORwN+bXYmTWCJ4U2pCSS7jjtPrIhoOLHFAyekj48CHTX4hjGBV/VSNsUsg=="
+  "resolved" "https://registry.npmjs.org/mpd-parser/-/mpd-parser-0.15.4.tgz"
+  "version" "0.15.4"
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "@videojs/vhs-utils" "^3.0.0"
+    "global" "^4.4.0"
+    "xmldom" "^0.4.0"
+
 "ms@^2.1.1", "ms@2.1.1":
   "integrity" "sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg=="
   "resolved" "https://registry.npmjs.org/ms/-/ms-2.1.1.tgz"
@@ -8034,6 +8165,18 @@
   dependencies:
     "dns-packet" "^1.3.1"
     "thunky" "^1.0.2"
+
+"mux.js@5.8.0":
+  "integrity" "sha512-v56I2YPyCq1bVbXW7vcuvQs8iHrDy7AeXsZyG1kxCxBUqUjZD0Xq/cU1wrd5dy9YTxRpvw37aTQ4ILwi40GXiw=="
+  "resolved" "https://registry.npmjs.org/mux.js/-/mux.js-5.8.0.tgz"
+  "version" "5.8.0"
+
+"mux.js@5.9.2":
+  "integrity" "sha512-9UAEYfcWqCp9hJ5NnT6xZbj2XGmt2GATzNHaYddlJ2AyeDcTGiaknUKtbUlYiw5rqLt0FN9upa+GdQYWX5GxgQ=="
+  "resolved" "https://registry.npmjs.org/mux.js/-/mux.js-5.9.2.tgz"
+  "version" "5.9.2"
+  dependencies:
+    "@babel/runtime" "^7.11.2"
 
 "nan@^2.12.1", "nan@^2.13.2":
   "integrity" "sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ=="
@@ -8913,6 +9056,13 @@
   dependencies:
     "node-modules-regexp" "^1.0.0"
 
+"pkcs7@^1.0.4":
+  "integrity" "sha512-afRERtHn54AlwaF2/+LFszyAANTCggGilmcmILUzEjvs3XgFZT+xE6+QWQcAGmu4xajy+Xtj7acLOPdx5/eXWQ=="
+  "resolved" "https://registry.npmjs.org/pkcs7/-/pkcs7-1.0.4.tgz"
+  "version" "1.0.4"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+
 "pkg-dir@^2.0.0":
   "integrity" "sha1-9tXREJ4Z1j7fQo4L1X4Sd3YVM0s="
   "resolved" "https://registry.npmjs.org/pkg-dir/-/pkg-dir-2.0.0.tgz"
@@ -9699,6 +9849,11 @@
   "integrity" "sha1-czIwDoQBYb2j5podHZGn1LwW8YI="
   "resolved" "https://registry.npmjs.org/process/-/process-0.11.10.tgz"
   "version" "0.11.10"
+
+"process@~0.5.1":
+  "integrity" "sha1-FjjYqONML0QKkduVq5rrZ3/Bhc8="
+  "resolved" "https://registry.npmjs.org/process/-/process-0.5.2.tgz"
+  "version" "0.5.2"
 
 "progress@^2.0.0":
   "integrity" "sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA=="
@@ -10595,6 +10750,13 @@
   dependencies:
     "aproba" "^1.1.1"
 
+"rust-result@^1.0.0":
+  "integrity" "sha1-NMdbLm3Dn+WHXlveyFteD5FTb3I="
+  "resolved" "https://registry.npmjs.org/rust-result/-/rust-result-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "individual" "^2.0.0"
+
 "safe-buffer@^5.0.1", "safe-buffer@^5.1.0", "safe-buffer@^5.1.1", "safe-buffer@^5.1.2", "safe-buffer@~5.1.0", "safe-buffer@~5.1.1", "safe-buffer@5.1.2":
   "integrity" "sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g=="
   "resolved" "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz"
@@ -10604,6 +10766,13 @@
   "integrity" "sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ=="
   "resolved" "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz"
   "version" "5.2.1"
+
+"safe-json-parse@4.0.0":
+  "integrity" "sha1-fA9XjPzNEtM6ccDgVBPi7KFx6qw="
+  "resolved" "https://registry.npmjs.org/safe-json-parse/-/safe-json-parse-4.0.0.tgz"
+  "version" "4.0.0"
+  dependencies:
+    "rust-result" "^1.0.0"
 
 "safe-regex@^1.1.0":
   "integrity" "sha1-QKNmnzsHfR6UPURinhV91IAjvy4="
@@ -12085,6 +12254,11 @@
   "resolved" "https://registry.npmjs.org/url-set-query/-/url-set-query-1.0.0.tgz"
   "version" "1.0.0"
 
+"url-toolkit@^2.1.6", "url-toolkit@^2.2.1":
+  "integrity" "sha512-8+DzgrtDZYZGhHaAop5WGVghMdCfOLGbhcArsJD0qDll71FXa7EeKxi2hilPIscn2nwMz4PRjML32Sz4JTN0Xw=="
+  "resolved" "https://registry.npmjs.org/url-toolkit/-/url-toolkit-2.2.1.tgz"
+  "version" "2.2.1"
+
 "url@^0.11.0":
   "integrity" "sha1-ODjpfPxgUh63PFJajlW/3Z4uKPE="
   "resolved" "https://registry.npmjs.org/url/-/url-0.11.0.tgz"
@@ -12202,6 +12376,32 @@
     "assert-plus" "^1.0.0"
     "core-util-is" "1.0.2"
     "extsprintf" "^1.2.0"
+
+"video.js@^6 || ^7":
+  "integrity" "sha512-eT9n7YCugHyWNHI2gyK28XoozNmLiW4F9dRYEP6ET/JVmm7oXPhLeVfs5kqcRviquISqWsvsNmhK1b9vvZzyVA=="
+  "resolved" "https://registry.npmjs.org/video.js/-/video.js-7.11.4.tgz"
+  "version" "7.11.4"
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+    "@videojs/http-streaming" "2.4.2"
+    "@videojs/xhr" "2.5.1"
+    "global" "4.3.2"
+    "keycode" "^2.2.0"
+    "safe-json-parse" "4.0.0"
+    "videojs-font" "3.2.0"
+    "videojs-vtt.js" "^0.15.2"
+
+"videojs-font@3.2.0":
+  "integrity" "sha512-g8vHMKK2/JGorSfqAZQUmYYNnXmfec4MLhwtEFS+mMs2IDY398GLysy6BH6K+aS1KMNu/xWZ8Sue/X/mdQPliA=="
+  "resolved" "https://registry.npmjs.org/videojs-font/-/videojs-font-3.2.0.tgz"
+  "version" "3.2.0"
+
+"videojs-vtt.js@^0.15.2":
+  "integrity" "sha512-kEo4hNMvu+6KhPvVYPKwESruwhHC3oFis133LwhXHO9U7nRnx0RiJYMiqbgwjgazDEXHR6t8oGJiHM6wq5XlAw=="
+  "resolved" "https://registry.npmjs.org/videojs-vtt.js/-/videojs-vtt.js-0.15.2.tgz"
+  "version" "0.15.2"
+  dependencies:
+    "global" "^4.3.1"
 
 "vm-browserify@^1.0.1":
   "integrity" "sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ=="
@@ -12741,6 +12941,16 @@
   "integrity" "sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw=="
   "resolved" "https://registry.npmjs.org/xmlchars/-/xmlchars-2.2.0.tgz"
   "version" "2.2.0"
+
+"xmldom@^0.1.27":
+  "integrity" "sha512-yS2uJflVQs6n+CyjHoaBmVSqIDevTAWrzMmjG1Gc7h1qQ7uVozNhEPJAwZXWyGQ/Gafo3fCwrcaokezLPupVyQ=="
+  "resolved" "https://registry.npmjs.org/xmldom/-/xmldom-0.1.31.tgz"
+  "version" "0.1.31"
+
+"xmldom@^0.4.0":
+  "integrity" "sha512-2E93k08T30Ugs+34HBSTQLVtpi6mCddaY8uO+pMNk1pqSjV5vElzn4mmh6KLxN3hki8rNcHSYzILoh3TEWORvA=="
+  "resolved" "https://registry.npmjs.org/xmldom/-/xmldom-0.4.0.tgz"
+  "version" "0.4.0"
 
 "xtend@^4.0.0", "xtend@~4.0.1":
   "integrity" "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ=="
