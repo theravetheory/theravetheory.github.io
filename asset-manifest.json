@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/web-radio/static/css/main.ab9dae29.chunk.css",
-    "main.js": "/web-radio/static/js/main.e51a88c9.chunk.js",
-    "main.js.map": "/web-radio/static/js/main.e51a88c9.chunk.js.map",
-    "runtime-main.js": "/web-radio/static/js/runtime-main.13a78d83.js",
-    "runtime-main.js.map": "/web-radio/static/js/runtime-main.13a78d83.js.map",
-    "static/js/2.162e23db.chunk.js": "/web-radio/static/js/2.162e23db.chunk.js",
-    "static/js/2.162e23db.chunk.js.map": "/web-radio/static/js/2.162e23db.chunk.js.map",
-    "static/js/3.07426cc5.chunk.js": "/web-radio/static/js/3.07426cc5.chunk.js",
-    "static/js/3.07426cc5.chunk.js.map": "/web-radio/static/js/3.07426cc5.chunk.js.map",
-    "index.html": "/web-radio/index.html",
-    "static/css/main.ab9dae29.chunk.css.map": "/web-radio/static/css/main.ab9dae29.chunk.css.map",
-    "static/js/2.162e23db.chunk.js.LICENSE.txt": "/web-radio/static/js/2.162e23db.chunk.js.LICENSE.txt",
-    "static/media/Fonts.css": "/web-radio/static/media/CatV_6x12_9.1d6e5934.ttf",
-    "static/media/VC.3da47717.gltf": "/web-radio/static/media/VC.3da47717.gltf",
-    "static/media/pause.2490bb6e.svg": "/web-radio/static/media/pause.2490bb6e.svg",
-    "static/media/play.405138f8.svg": "/web-radio/static/media/play.405138f8.svg",
-    "static/media/trt_logo_small.d0be214e.png": "/web-radio/static/media/trt_logo_small.d0be214e.png"
+    "main.css": "/static/css/main.02a31edf.chunk.css",
+    "main.js": "/static/js/main.a51c0c26.chunk.js",
+    "main.js.map": "/static/js/main.a51c0c26.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.fad13786.js",
+    "runtime-main.js.map": "/static/js/runtime-main.fad13786.js.map",
+    "static/js/2.162e23db.chunk.js": "/static/js/2.162e23db.chunk.js",
+    "static/js/2.162e23db.chunk.js.map": "/static/js/2.162e23db.chunk.js.map",
+    "static/js/3.07426cc5.chunk.js": "/static/js/3.07426cc5.chunk.js",
+    "static/js/3.07426cc5.chunk.js.map": "/static/js/3.07426cc5.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.02a31edf.chunk.css.map": "/static/css/main.02a31edf.chunk.css.map",
+    "static/js/2.162e23db.chunk.js.LICENSE.txt": "/static/js/2.162e23db.chunk.js.LICENSE.txt",
+    "static/media/Fonts.css": "/static/media/CatV_6x12_9.1d6e5934.ttf",
+    "static/media/VC.3da47717.gltf": "/static/media/VC.3da47717.gltf",
+    "static/media/pause.2490bb6e.svg": "/static/media/pause.2490bb6e.svg",
+    "static/media/play.405138f8.svg": "/static/media/play.405138f8.svg",
+    "static/media/trt_logo_small.d0be214e.png": "/static/media/trt_logo_small.d0be214e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.13a78d83.js",
+    "static/js/runtime-main.fad13786.js",
     "static/js/2.162e23db.chunk.js",
-    "static/css/main.ab9dae29.chunk.css",
-    "static/js/main.e51a88c9.chunk.js"
+    "static/css/main.02a31edf.chunk.css",
+    "static/js/main.a51c0c26.chunk.js"
   ]
 }
