@@ -8,49 +8,52 @@ import './scss/Scroll.scss';
 import AudioPlayer from './components/AudioPlayer.js';
 import HomeBkgd from './components/VantaBkgd.js';
 import ThreeCube from './components/THREECube.js';
-import * as Realm from "realm-web";
-import $ from 'jquery';
+import VRScene from './components/VRScene.js';
+import { Entity, Scene } from 'aframe-react';
 
-const REALM_APP_ID = "theravetheoryradio-rducr"; // e.g. myapp-abcde
-const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
+// import * as Realm from "realm-web";
+// import $ from 'jquery';
 
-// Create a component that displays the given user's details
-function UserDetail({ user, username, setUser}) {
-  const logoutAnonymous = async () => {
-    await app.currentUser.logOut();
-    setUser(false);
-  }
-  return (
-    <>
-      <div>
-        <h1>Logged in with anonymous id: {user.id} and username {username}</h1>
-      </div>
-      <button onClick={logoutAnonymous}>Log Out</button>
-    </>
-  );
-}
-
-// Create a component that lets an anonymous user log in
-function Login({ setUser, setUserName }) {
-  const loginAnonymous = async () => {
-    console.log($('#login-name input').val());
-    setUserName($('#login-name input').val());
-    const user = await app.logIn(Realm.Credentials.anonymous());
-    setUser(user);
-  };
-  return (
-    <>
-      <label id="login-name"> Name: <input type="text"/></label>
-      <button onClick={loginAnonymous}>Log In</button>
-    </>
-  );
-}
+// const REALM_APP_ID = "theravetheoryradio-rducr"; // e.g. myapp-abcde
+// const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
+//
+// // Create a component that displays the given user's details
+// function UserDetail({ user, username, setUser}) {
+//   const logoutAnonymous = async () => {
+//     await app.currentUser.logOut();
+//     setUser(false);
+//   }
+//   return (
+//     <>
+//       <div>
+//         <h1>Logged in with anonymous id: {user.id} and username {username}</h1>
+//       </div>
+//       <button onClick={logoutAnonymous}>Log Out</button>
+//     </>
+//   );
+// }
+//
+// // Create a component that lets an anonymous user log in
+// function Login({ setUser, setUserName }) {
+//   const loginAnonymous = async () => {
+//     console.log($('#login-name input').val());
+//     setUserName($('#login-name input').val());
+//     const user = await app.logIn(Realm.Credentials.anonymous());
+//     setUser(user);
+//   };
+//   return (
+//     <>
+//       <label id="login-name"> Name: <input type="text"/></label>
+//       <button onClick={loginAnonymous}>Log In</button>
+//     </>
+//   );
+// }
 
 
 function App() {
   const stream_url = "https://theravetheory.evan-savage.com:8000";
-  const [user, setUser] = React.useState(app.currentUser);
-  const [username, setUserName] = React.useState();
+  // const [user, setUser] = React.useState(app.currentUser);
+  // const [username, setUserName] = React.useState();
   return (
     <div className="app-wrapper">
       <HomeBkgd />
