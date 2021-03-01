@@ -54,6 +54,7 @@ function App() {
   const [username, setUserName] = React.useState();
   return (
     <div className="app-wrapper">
+      <HomeBkgd />
       <div className="nav-wrapper">
         <nav className="navbar">
           <div className="icon-container">

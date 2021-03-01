@@ -31,7 +31,7 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <video-js style="position: absolute; top: 0; z-index: 1000;" id="player" className="video-js vjs-default-skin" height="360" width="640" controls preload="none">
-      <source src="http://3.17.204.106:8080/hls/meme.m3u8" type="application/x-mpegURL" />
+      <source src="https://livestream.evan-savage.com:8080/hls/meme.m3u8" type="application/x-mpegURL" />
     </video-js>
     <!--
       This HTML file is a template.
@@ -47,7 +47,6 @@
     <script src="videojs-http-streaming.min.js"></script>
     <script>
       var player = videojs('player');
-      player.play();
     </script>
   </body>
 </html>

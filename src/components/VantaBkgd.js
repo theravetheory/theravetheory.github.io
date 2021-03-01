@@ -12,17 +12,17 @@ class HomeBkgd extends React.Component {
     this.vantaEffect = NET({
       el: this.vantaRef.current,
       THREE: THREE,
-      mouseControls: true,
+      mouseControls: false,
       touchControls: false,
       gyroControls: true,
       scale: 1.00,
       scaleMobile: 1.00,
       color: 0x04ed00,
-      points: 40.00,
-      maxDistance: 8.00,
+      points: 5.00,
+      maxDistance: 17.00,
       spacing: 5.00,
       backgroundColor: 0x727478,
-      showDots: false,
+      showDots: true,
     })
   }
   componentWillUnmount() {
