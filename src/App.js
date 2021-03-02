@@ -10,6 +10,7 @@ import HomeBkgd from './components/VantaBkgd.js';
 import ThreeCube from './components/THREECube.js';
 import VRScene from './components/VRScene.js';
 import { Entity, Scene } from 'aframe-react';
+import ChatRoom from "./components/ChatRoom.js";
 
 import * as Realm from "realm-web";
 import $ from 'jquery';
@@ -62,12 +63,15 @@ function App() {
           </div>
           <AudioPlayer streamurl={stream_url}/>
         </nav>
+      <ChatRoom roomId="1" />
       </div>
+
       <div>
         <header className="App-header">
           {user ? <UserDetail user={user} username={username} setUser={setUser}/> : <Login setUser={setUser} setUserName={setUserName}/>}
         </header>
       </div>
+      
 
     </div>
 
