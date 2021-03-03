@@ -36,10 +36,10 @@ export default class VRScene extends React.Component {
     }
 
     return (
-      <Scene background={{color:'black'}} gridhelper={{size:1000, divisions:1000, colorGrid: 'green'}}>
+      <Scene background={{color:'black'}} gridhelper={{size:1000, divisions:500, colorGrid: '#04ed00', colorCenterLine: '#feef49'}}>
         <Entity mountain material={{color: 'blue'}}/>
-        {getRandomLogos(40)}
-        <Entity primitive="a-camera" position={{x: 0, y:5, z:0}}>
+        {getRandomLogos(50)}
+        <Entity primitive="a-camera" wasd-controls-enabled="false" position={{x: 0, y:5, z:0}} rotation={{x:20,y:0}} animation={{property: "rotation", dur: 30000, loop: "true",to: {x:20, y:360, z:0}, easing: "linear" }}>
           <Entity  />
         </Entity>
       </Scene>
