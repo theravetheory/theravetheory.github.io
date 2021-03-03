@@ -1,7 +1,7 @@
 import logo_small from './logos/trt_logo.png';
 // import logosquaresmall from './logos/trtsquaresmall.png';
 // import icon from './logos/trt_favicon.png';
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Fonts.css';
 import './scss/App.scss';
 import './scss/Scroll.scss';
@@ -53,6 +53,9 @@ function App() {
   const stream_url = "https://theravetheory.evan-savage.com:8000";
   const [user, setUser] = React.useState(app.currentUser);
   const [username, setUserName] = React.useState();
+
+ 
+
   return (
     <div className="app-wrapper">
       <HomeBkgd />

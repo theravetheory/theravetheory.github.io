@@ -1,13 +1,13 @@
-chat-room-container {
+.chat-room-container {
     position: fixed;
-    left: 0;
-    right: 500;
+    left: 70%;
+    right: 0;
     top: 0;
-    bottom: 0;
+    bottom: 10%;
     display: flex;
+    max-width:25vw;
     flex-direction: column;
     margin: 16px;
-    background-color: white;
 }
 
 .room-name {
@@ -34,7 +34,7 @@ chat-room-container {
     height: 200px;
     max-height: 50%;
     font-size: 20px;
-    padding: 8px 12px;
+    //padding: 8px 12px;
     resize: none;
 }
 

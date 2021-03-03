@@ -19,7 +19,7 @@ io.on("connection", (socket) => {
 
   // Listen for new messages
   socket.on(NEW_CHAT_MESSAGE_EVENT, (data) => {
-    console.log("new message event");
+    console.log(data);
     io.in(roomId).emit(NEW_CHAT_MESSAGE_EVENT, data);
   });
 
