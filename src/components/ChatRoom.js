@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import useChat from "../useChat.js";
 import Draggable from "react-draggable"
+import "terminal.css"
 
 import "../scss/ChatRoom.scss";
 
@@ -59,6 +60,9 @@ const ChatRoom = (props) => {
       </div>
       </Draggable>
   );
+
+
+
 };
 
 export default ChatRoom;
