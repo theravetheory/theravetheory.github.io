@@ -10,6 +10,7 @@ import ReactDOM from 'react-dom';
 import vc from '../logos/VC.gltf'
 import logo from '../logos/trt_logo.png'
 
+
 function getRandomInt(min_max) {
   return Math.floor(min_max[0] + Math.random() * Math.floor(min_max[1] - min_max[0]));
 }
@@ -27,7 +28,7 @@ export default class VRScene extends React.Component {
         console.log(r_axis);
         content.push(
           <Entity
-            geometry={{primitive: 'box', color: 'blue'}}
+            geometry={{primitive: 'box'}}
             material={{src: logo, opacity: 0.99, shader: 'flat'}}
             scale={{x: 7, y: 5, z: 7}}
             position={{x: getRandomInt(x_range),
@@ -45,10 +46,9 @@ export default class VRScene extends React.Component {
 
     return (
       <Scene background={{color:'black'}} gridhelper={{size:1000, divisions:300, colorGrid: '#04ed00', colorCenterLine: '#feef49'}}>
-        <Entity mountain material={{color: 'blue'}}/>
+
         {getRandomLogos(30)}
-        <Entity primitive="a-camera" wasd-controls-enabled="false" position={{x: 0, y:5, z:0}} rotation={{x:20,y:0}} animation={{property: "rotation", dur: 30000, loop: "true",to: {x:20, y:360, z:0}, easing: "linear" }}>
-          <Entity  />
+        <Entity primitive="a-camera" wasd-controls-enabled="true" position={{x: 0, y:5, z:0}} fence={{width: 100, depth: 100}}>
         </Entity>
       </Scene>
     );
