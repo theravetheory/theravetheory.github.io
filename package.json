@@ -23,6 +23,7 @@
     "react-dom": "^16.14.0",
     "react-draggable": "^4.4.3",
     "react-modal": "^3.12.1",
+    "react-resizable": "^1.11.0",
     "react-scripts": "4.0.2",
     "react-three": "^0.8.0",
     "realm-web": "^1.2.1",

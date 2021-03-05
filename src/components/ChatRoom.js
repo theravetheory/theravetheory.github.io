@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import useChat from "../useChat.js";
-import Draggable from "react-draggable"
-import "terminal.css"
-
+import Draggable from "react-draggable";
+import { Resizable, ResizableBox } from "react-resizable";
 import "../scss/ChatRoom.scss";
+import "terminal.css";
 
 const customStyles = {
-    content : {
+  content: {
     //   top                   : '50%',
     //   left                  : '50%',
     //   right                 : 'auto',
     //   bottom                : 'auto',
     //   marginRight           : '-50%',
     //   transform             : 'translate(-50%, -50%)'
-    }
-  };
+  },
+};
 
 const ChatRoom = (props) => {
   const { roomId } = props.roomId; // Gets roomId from URL
@@ -30,12 +30,11 @@ const ChatRoom = (props) => {
     setNewMessage("");
   };
 
-
   return (
     <Draggable>
       <div className="chat-room-container">
         <div className="messages-container">
-          <ol className="messages-list">
+          <ol className="messages-list no-list-numbers">
             {messages.map((message, i) => (
               <li
                 key={i}
@@ -58,11 +57,8 @@ const ChatRoom = (props) => {
           Send
         </button>
       </div>
-      </Draggable>
+    </Draggable>
   );
-
-
-
 };
 
 export default ChatRoom;

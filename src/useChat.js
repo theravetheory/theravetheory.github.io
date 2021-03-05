@@ -9,12 +9,11 @@ const useChat = (roomId) => {
   const socketRef = useRef();
 
   useEffect(() => {
-    
     // Creates a WebSocket connection
     socketRef.current = socketIOClient(SOCKET_SERVER_URL, {
       query: { roomId },
     });
-    
+
     // Listens for incoming messages
     socketRef.current.on(NEW_CHAT_MESSAGE_EVENT, (message) => {
       const incomingMessage = {
@@ -23,7 +22,7 @@ const useChat = (roomId) => {
       };
       setMessages((messages) => [...messages, incomingMessage]);
     });
-    
+
     // Destroys the socket reference
     // when the connection is closed
     return () => {
@@ -34,10 +33,12 @@ const useChat = (roomId) => {
   // Sends a message to the server that
   // forwards it to all users in the same room
   const sendMessage = (messageBody) => {
-    socketRef.current.emit(NEW_CHAT_MESSAGE_EVENT, {
-      body: messageBody,
-      senderId: socketRef.current.id,
-    });
+    if (messageBody) {
+      socketRef.current.emit(NEW_CHAT_MESSAGE_EVENT, {
+        body: messageBody,
+        senderId: socketRef.current.id,
+      });
+    }
   };
 
   return { messages, sendMessage };
