@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import useChat from "../useChat.js";
 import Draggable from "react-draggable";
 import { Resizable, ResizableBox } from "react-resizable";
 import "../scss/ChatRoom.scss";
 import "terminal.css";
+
+var messagesEnd;
 
 const customStyles = {
   content: {
@@ -35,6 +37,16 @@ const ChatRoom = (props) => {
     setNewMessage("");
   };
 
+  const scrollToBottom = () => {
+    messagesEnd.scrollIntoView({ behavior: "smooth" });
+  }
+
+  useEffect(()=>{
+      scrollToBottom();
+  })
+
+  
+
 //   const handleKeyPress = (event) => {
 //     console.log(event.key);
 //     if (event.key == "Enter") {
@@ -46,6 +58,7 @@ const ChatRoom = (props) => {
   return (
     <Draggable>
       <div className="chat-room-container">
+          <div class="messages-header">rave theory chat</div>
         <div className="messages-container">
           <ol className="messages-list no-list-numbers">
             {messages.map((message, i) => (
@@ -59,6 +72,10 @@ const ChatRoom = (props) => {
               </li>
             ))}
           </ol>
+        {/*dummy div for snapping scrollbar*/ }
+          <div style={{ float:"left", clear: "both" }}
+             ref={(el) => { messagesEnd = el; }}>
+        </div>
         </div>
         <textarea
           value={newMessage}
@@ -67,9 +84,9 @@ const ChatRoom = (props) => {
           placeholder="Write message..."
           className="new-message-input-field"
         />
-        <button onClick={handleSendMessage} className="send-message-button">
+        {/* <button onClick={handleSendMessage} className="send-message-button">
           Send
-        </button>
+        </button> */}
       </div>
     </Draggable>
   );
