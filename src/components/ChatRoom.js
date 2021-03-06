@@ -22,13 +22,26 @@ const ChatRoom = (props) => {
   const [newMessage, setNewMessage] = React.useState(""); // Message to be sent
 
   const handleNewMessageChange = (event) => {
-    setNewMessage(event.target.value);
+    if (event.target.value.substr(-1)=="\n") {
+        sendMessage(newMessage);
+        setNewMessage("");
+    } else {
+      setNewMessage(event.target.value);
+    }
   };
 
   const handleSendMessage = () => {
     sendMessage(newMessage);
     setNewMessage("");
   };
+
+//   const handleKeyPress = (event) => {
+//     console.log(event.key);
+//     if (event.key == "Enter") {
+//       sendMessage(newMessage);
+//       setNewMessage("");
+//     }
+//   };
 
   return (
     <Draggable>
@@ -49,6 +62,7 @@ const ChatRoom = (props) => {
         </div>
         <textarea
           value={newMessage}
+          //onKeyPress={handleKeyPress}
           onChange={handleNewMessageChange}
           placeholder="Write message..."
           className="new-message-input-field"
