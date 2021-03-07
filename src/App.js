@@ -14,6 +14,7 @@ import ChatRoom from "./components/ChatRoom.js";
 
 import * as Realm from "realm-web";
 import $ from 'jquery';
+import { ConsoleWriter } from 'istanbul-lib-report';
 
 const REALM_APP_ID = "theravetheoryradio-rducr"; // e.g. myapp-abcde
 const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
@@ -50,6 +51,7 @@ function Login({ setUser, setUserName }) {
 
 
 function App() {
+  console.log(Realm);
   const stream_url = "https://theravetheory.evan-savage.com:8000";
   const [user, setUser] = React.useState(app.currentUser);
   const [username, setUserName] = React.useState();
@@ -59,6 +61,13 @@ function App() {
   return (
     <div className="app-wrapper">
       <HomeBkgd />
+      
+      <div>
+        <header className="App-header">
+          {user ? <UserDetail user={user} username={username} setUser={setUser}/> : <Login setUser={setUser} setUserName={setUserName}/>}
+        </header>
+      </div>
+      
       <div className="nav-wrapper">
         <nav className="navbar">
           <div className="icon-container">
@@ -66,15 +75,9 @@ function App() {
           </div>
           <AudioPlayer streamurl={stream_url}/>
         </nav>
-      <ChatRoom roomId="1" />
+      { user && <ChatRoom roomId="1" user={user} username={username} /> }
       </div>
 
-      <div>
-        <header className="App-header">
-          {user ? <UserDetail user={user} username={username} setUser={setUser}/> : <Login setUser={setUser} setUserName={setUserName}/>}
-        </header>
-      </div>
-      
 
     </div>
 

@@ -19,6 +19,7 @@ const customStyles = {
 };
 
 const ChatRoom = (props) => {
+  var username = props.username;
   const { roomId } = props.roomId; // Gets roomId from URL
   const { messages, sendMessage } = useChat(roomId); // Creates a websocket and manages messaging
   const [newMessage, setNewMessage] = React.useState(""); // Message to be sent
@@ -67,8 +68,8 @@ const ChatRoom = (props) => {
                 className={`message-item ${
                   message.ownedByCurrentUser ? "my-message" : "received-message"
                 }`}
-              >
-                {message.body}
+              >  
+                {message.ownedByCurrentUser ? username+ ": " + message.body : "other user: " + message.body}
               </li>
             ))}
           </ol>
