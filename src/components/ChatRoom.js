@@ -2,6 +2,8 @@ import React, { Component, useEffect } from "react";
 import useChat from "../useChat.js";
 import Draggable from "react-draggable";
 import { Resizable, ResizableBox } from "react-resizable";
+import border from "../backgrounds/chat-border-1.png";
+
 import "../scss/ChatRoom.scss";
 import "terminal.css";
 
@@ -25,9 +27,9 @@ const ChatRoom = (props) => {
   const [newMessage, setNewMessage] = React.useState(""); // Message to be sent
 
   const handleNewMessageChange = (event) => {
-    if (event.target.value.substr(-1)=="\n") {
-        sendMessage(newMessage);
-        setNewMessage("");
+    if (event.target.value.substr(-1) == "\n") {
+      sendMessage(newMessage);
+      setNewMessage("");
     } else {
       setNewMessage(event.target.value);
     }
@@ -40,26 +42,27 @@ const ChatRoom = (props) => {
 
   const scrollToBottom = () => {
     messagesEnd.scrollIntoView({ behavior: "smooth" });
-  }
+  };
 
-  useEffect(()=>{
-      scrollToBottom();
-  })
+  useEffect(() => {
+    scrollToBottom();
+  });
 
-  
-
-//   const handleKeyPress = (event) => {
-//     console.log(event.key);
-//     if (event.key == "Enter") {
-//       sendMessage(newMessage);
-//       setNewMessage("");
-//     }
-//   };
+  //   const handleKeyPress = (event) => {
+  //     console.log(event.key);
+  //     if (event.key == "Enter") {
+  //       sendMessage(newMessage);
+  //       setNewMessage("");
+  //     }
+  //   };
 
   return (
     <Draggable>
-      <div className="chat-room-container">
-          <div class="messages-header">rave theory chat</div>
+      <div className="chat-room-container" id="border">
+        {/* <div className="border"> */}
+
+        {/* <img src={border}></img> */}
+        <div class="messages-header">rave theory chat</div>
         <div className="messages-container">
           <ol className="messages-list no-list-numbers">
             {messages.map((message, i) => (
@@ -68,15 +71,20 @@ const ChatRoom = (props) => {
                 className={`message-item ${
                   message.ownedByCurrentUser ? "my-message" : "received-message"
                 }`}
-              >  
-                {message.ownedByCurrentUser ? username+ ": " + message.body : "other user: " + message.body}
+              >
+                {message.ownedByCurrentUser
+                  ? username + ": " + message.body
+                  : "other user: " + message.body}
               </li>
             ))}
           </ol>
-        {/*dummy div for snapping scrollbar*/ }
-          <div style={{ float:"left", clear: "both" }}
-             ref={(el) => { messagesEnd = el; }}>
-        </div>
+          {/*dummy div for snapping scrollbar*/}
+          <div
+            style={{ float: "left", clear: "both" }}
+            ref={(el) => {
+              messagesEnd = el;
+            }}
+          ></div>
         </div>
         <textarea
           value={newMessage}
@@ -89,6 +97,7 @@ const ChatRoom = (props) => {
           Send
         </button> */}
       </div>
+      {/* </div> */}
     </Draggable>
   );
 };

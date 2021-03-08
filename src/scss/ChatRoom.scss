@@ -1,3 +1,21 @@
+#border {
+    border: 40px solid transparent;
+    // padding: 15px;
+    border-image: url(../backgrounds/chat-border-2.png) 30 round;
+    // background: url(../backgrounds/chat-border-1.png);
+    // width: 150%;
+    // position: fixed;
+    // left: 10%;
+    // right: 0;
+    // top: 100%;
+    // bottom: 10%;
+    // display: flex;
+    // max-width:60vw;
+    // max-height:40vw;
+    // flex-direction: column;
+    // margin: 16px;
+
+}
 
 
 .chat-room-container {
@@ -7,8 +25,8 @@
     top: 0;
     bottom: 10%;
     display: flex;
-    max-width:60vw;
-    max-height:40vw;
+    max-width:40vw;
+    max-height:30vw;
     flex-direction: column;
     margin: 16px;
 }
@@ -18,12 +36,13 @@
 }
 
 .messages-container {
+    background: url("../backgrounds/chat-border-2.png");
     flex: 1;
     min-height: 100px;
     overflow: auto;
     max-width: 100%;
     border: 1px solid black;
-    background-color: rgb(37, 37, 37);
+    // background-color: rgba(37, 37, 37,0.4);
     border-radius: 0px 0px 0 0;
 }
 
@@ -51,7 +70,7 @@
     max-height: 50%;
     font-size: 20px;
     color: white;
-    background-color: rgb(37, 37, 37);
+    background-color: rgba(37, 37, 37,1);
     //padding: 8px 12px;
     resize: none;
 }
@@ -66,7 +85,7 @@
 }
 
 .my-message {
-    background-color: rgb(37, 37, 37);
+    background-color: rgba(37, 37, 37,0.4);
     margin-left: auto;
     text-align: right;
 }
@@ -74,7 +93,7 @@
 
 
 .received-message {
-    background-color: #b9b9b9;
+    background-color: rgba(50,50,50,0.4);
     margin-right: auto;
 }
 
@@ -94,3 +113,6 @@
 .messages-header {
     background-color:#ececec;
 }
+
+ 
+

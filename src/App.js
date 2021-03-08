@@ -12,6 +12,7 @@ import VRScene from './components/VRScene.js';
 import { Entity, Scene } from 'aframe-react';
 import ChatRoom from "./components/ChatRoom.js";
 
+
 import * as Realm from "realm-web";
 import $ from 'jquery';
 import { ConsoleWriter } from 'istanbul-lib-report';
