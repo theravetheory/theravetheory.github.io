@@ -2253,6 +2253,11 @@
   "resolved" "https://registry.npmjs.org/aframe-mountain-component/-/aframe-mountain-component-0.3.3.tgz"
   "version" "0.3.3"
 
+"aframe-multi-video-component@^2.1.0":
+  "integrity" "sha512-ySVHHoX5mrE0Lt/G2y9w1sMxEwVixUsoMxc/X4JwlzQOpZmNX0cFEer1CaIIeTUsp+xbR04j2szwqS6K7cejtw=="
+  "resolved" "https://registry.npmjs.org/aframe-multi-video-component/-/aframe-multi-video-component-2.1.0.tgz"
+  "version" "2.1.0"
+
 "aframe-particle-system-component@^1.1.3":
   "integrity" "sha512-G1qmdre8mrbLTw67jNUr79IRFXxL+Rt++LFC1enhNHFoiyqgvcLsSWJLYhoVdEpTyvM39b1VMM7RjivpW4oBsg=="
   "resolved" "https://registry.npmjs.org/aframe-particle-system-component/-/aframe-particle-system-component-1.1.3.tgz"

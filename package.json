@@ -16,6 +16,7 @@
     "aframe-fence-component": "^0.1.0",
     "aframe-gridhelper-component": "^0.2.0",
     "aframe-mountain-component": "^0.3.3",
+    "aframe-multi-video-component": "^2.1.0",
     "aframe-particle-system-component": "^1.1.3",
     "aframe-react": "^4.4.0",
     "icecast-metadata-js": "^0.3.2",

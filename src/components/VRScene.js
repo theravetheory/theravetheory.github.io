@@ -2,6 +2,7 @@ import 'aframe';
 import 'aframe-particle-system-component';
 import 'aframe-mountain-component';
 import 'aframe-gridhelper-component'
+import 'aframe-multi-video-component'
 import 'aframe-fence-component'
 import 'aframe-extras'
 import {Entity, Scene, Animation} from 'aframe-react';
@@ -9,6 +10,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import vc from '../logos/VC.gltf'
 import logo from '../logos/trt_logo.png'
+
+// Video example
+//
+// <video id="video1" loop crossorigin="anonymous" webkit-playsinline playsinline preload="true">
+//    <source src="./Bowlynn.mp4"></source>
+//</video>
+//<Entity position={{x:0, y:20, z:-105}} scale={{x:20, y:20, z:20}} aframe-multi-video-component={{src:"#video1", autoplay:"true", volume: 0.1}} />
 
 
 function getRandomInt(min_max) {
@@ -46,9 +54,8 @@ export default class VRScene extends React.Component {
 
     return (
       <Scene background={{color:'black'}} gridhelper={{size:1000, divisions:300, colorGrid: '#04ed00', colorCenterLine: '#feef49'}}>
-
         {getRandomLogos(30)}
-        <Entity primitive="a-camera" wasd-controls-enabled="true" position={{x: 0, y:5, z:0}} fence={{width: 100, depth: 100}}>
+        <Entity primitive="a-camera" wasd-controls-enabled="true" position={{x: 0, y:5, z:0}} fence={{width: 100, depth: 100}} animation={{}}>
         </Entity>
       </Scene>
     );
