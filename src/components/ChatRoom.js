@@ -22,13 +22,14 @@ const customStyles = {
 
 const ChatRoom = (props) => {
   var username = props.username;
+  var userColor = props.userColor;
   const { roomId } = props.roomId; // Gets roomId from URL
   const { messages, sendMessage } = useChat(roomId); // Creates a websocket and manages messaging
   const [newMessage, setNewMessage] = React.useState(""); // Message to be sent
 
   const handleNewMessageChange = (event) => {
     if (event.target.value.substr(-1) == "\n") {
-      sendMessage(newMessage);
+      sendMessage(newMessage,username);
       setNewMessage("");
     } else {
       setNewMessage(event.target.value);
@@ -73,8 +74,10 @@ const ChatRoom = (props) => {
                 }`}
               >
                 {message.ownedByCurrentUser
-                  ? username + ": " + message.body
-                  : "other user: " + message.body}
+                  ? "you" + ": " + message.body
+                  : message.username + ": " + message.body}
+                
+                
               </li>
             ))}
           </ol>
