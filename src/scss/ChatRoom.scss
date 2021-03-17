@@ -47,7 +47,8 @@
 }
 
 .messages-container ol li::before{
-    content: ">      ";
+    display: inline-block;
+    content: "";
     font-size: 50%;
 }
 
@@ -59,9 +60,9 @@
     
 }
 
-.messages-list .message-item .my-message::before{
-    content: "me";
-}
+// .messages-list .message-item .my-message::before{
+//     content: "me";
+// }
 
 
 .new-message-input-field {
@@ -78,7 +79,7 @@
 .message-item {
     width: 100%;
     // margin: 8px;
-    padding: 12px 8px;
+    padding: 6px 8px;
     word-break: break-word;
     // border-radius: 4px;
     color: white;
@@ -88,6 +89,7 @@
     background-color: rgba(37, 37, 37,0.4);
     margin-left: auto;
     text-align: right;
+    color: pink;
 }
 
 
@@ -95,6 +97,7 @@
 .received-message {
     background-color: rgba(50,50,50,0.4);
     margin-right: auto;
+    color: yellow;
 }
 
 .send-message-button {
@@ -112,6 +115,10 @@
 
 .messages-header {
     background-color:#ececec;
+}
+
+.message-username{
+    // color: pink;
 }
 
 

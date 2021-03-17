@@ -6,19 +6,17 @@ import border from "../backgrounds/chat-border-1.png";
 
 import "../scss/ChatRoom.scss";
 import "terminal.css";
+import { removeData } from "jquery";
 
 var messagesEnd;
 
-const customStyles = {
-  content: {
-    //   top                   : '50%',
-    //   left                  : '50%',
-    //   right                 : 'auto',
-    //   bottom                : 'auto',
-    //   marginRight           : '-50%',
-    //   transform             : 'translate(-50%, -50%)'
-  },
-};
+const colorList = ["Red","Pink"]
+// const color = "Red";
+// var colorMapping = {
+
+// }
+
+
 
 const ChatRoom = (props) => {
   var username = props.username;
@@ -29,7 +27,7 @@ const ChatRoom = (props) => {
 
   const handleNewMessageChange = (event) => {
     if (event.target.value.substr(-1) == "\n") {
-      sendMessage(newMessage,username);
+      sendMessage(newMessage, username);
       setNewMessage("");
     } else {
       setNewMessage(event.target.value);
@@ -45,6 +43,10 @@ const ChatRoom = (props) => {
     messagesEnd.scrollIntoView({ behavior: "smooth" });
   };
 
+  // const assignUserColor= (username,colorMapping) =>{
+  //   colorMapping[username] = "Red";
+  // }
+
   useEffect(() => {
     scrollToBottom();
   });
@@ -58,6 +60,8 @@ const ChatRoom = (props) => {
   //   };
 
   return (
+    //TODO: MAKE MINIMIZABLE
+
     <Draggable>
       <div className="chat-room-container" id="border">
         {/* <div className="border"> */}
@@ -73,11 +77,14 @@ const ChatRoom = (props) => {
                   message.ownedByCurrentUser ? "my-message" : "received-message"
                 }`}
               >
-                {message.ownedByCurrentUser
-                  ? "you" + ": " + message.body
-                  : message.username + ": " + message.body}
                 
-                
+                <span className="message-username" style={{color:colorList[1]}}>
+                  
+                  {message.ownedByCurrentUser
+                    ? "you" + ": "
+                    : message.username + ": "}
+                </span>
+                {message.body}
               </li>
             ))}
           </ol>
