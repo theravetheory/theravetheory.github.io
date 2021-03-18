@@ -7,6 +7,8 @@ const io = require("socket.io")(server, {
 
 const PORT = 4000;
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
+const NEW_USER_EVENT = "newUser";
+
 
 io.on("connection", (socket) => {
     console.log(`Socket connection made`);
@@ -22,6 +24,11 @@ io.on("connection", (socket) => {
     console.log(data);
     io.in(roomId).emit(NEW_CHAT_MESSAGE_EVENT, data);
   });
+
+  socket.on(NEW_USER_EVENT, (data)=>{
+    console.log(data);
+    io.in(roomId).emit(NEW_USER_EVENT, data);
+  })
 
   // Leave the room if the user closes the socket
   socket.on("disconnect", () => {

@@ -1,17 +1,27 @@
 import { useEffect, useRef, useState } from "react";
 import socketIOClient from "socket.io-client";
 
-const NEW_CHAT_MESSAGE_EVENT = "newChatMessage"; // Name of the event
+const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
+const NEW_USER_EVENT = "newUser"; // Name of the event
 const SOCKET_SERVER_URL = "http://localhost:4000";
 
-const useChat = (roomId) => {
+const useChat = (roomId, username) => {
   const [messages, setMessages] = useState([]); // Sent and received messages
+  const [users, setUsers] = useState(["donimo"]);
   const socketRef = useRef();
 
   useEffect(() => {
+    // setUsers(users.concat(username));
+
     // Creates a WebSocket connection
     socketRef.current = socketIOClient(SOCKET_SERVER_URL, {
       query: { roomId },
+      username: { username },
+    });
+
+    //trying to add new user to list only first time they enter chat room
+    socketRef.current.emit(NEW_USER_EVENT, {
+      username: username,
     });
 
     // Listens for incoming messages
@@ -23,6 +33,15 @@ const useChat = (roomId) => {
       setMessages((messages) => [...messages, incomingMessage]);
     });
 
+    socketRef.current.on(NEW_USER_EVENT, (username) => {
+      const newUser = {
+        ...username,
+      };
+      //just quick fix for empty user events
+      if(username){
+      setUsers(users.concat(newUser.username));}
+    });
+
     // Destroys the socket reference
     // when the connection is closed
     return () => {
@@ -32,7 +51,7 @@ const useChat = (roomId) => {
 
   // Sends a message to the server that
   // forwards it to all users in the same room
-  const sendMessage = (messageBody,username) => {
+  const sendMessage = (messageBody, username) => {
     if (messageBody) {
       socketRef.current.emit(NEW_CHAT_MESSAGE_EVENT, {
         body: messageBody,
@@ -42,7 +61,13 @@ const useChat = (roomId) => {
     }
   };
 
-  return { messages, sendMessage };
+  const updateUsers = (username) => {
+    socketRef.current.emit(NEW_USER_EVENT, {
+      username: username,
+    });
+  };
+
+  return { messages, users, sendMessage, updateUsers };
 };
 
 export default useChat;
