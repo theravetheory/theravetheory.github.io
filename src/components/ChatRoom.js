@@ -79,7 +79,7 @@ const ChatRoom = (props) => {
         {/* LIST OF USERS (make into its own component?) */}
         <div>
           {users.map((user) => (
-            <li>{user}</li>
+            <li>{user.username}</li>
           ))}
         </div>
         {/* <div className="border"> */}

@@ -26,7 +26,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on(NEW_USER_EVENT, (data)=>{
-    console.log(data);
+    console.log("USER EVENT: " + JSON.stringify(data));
     io.in(roomId).emit(NEW_USER_EVENT, data);
   })
 

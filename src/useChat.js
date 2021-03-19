@@ -7,7 +7,7 @@ const SOCKET_SERVER_URL = "http://localhost:4000";
 
 const useChat = (roomId, username) => {
   const [messages, setMessages] = useState([]); // Sent and received messages
-  const [users, setUsers] = useState(["donimo"]);
+  const [users, setUsers] = useState([]);
   const socketRef = useRef();
 
   useEffect(() => {
@@ -30,7 +30,9 @@ const useChat = (roomId, username) => {
         ...message,
         ownedByCurrentUser: message.senderId === socketRef.current.id,
       };
+
       setMessages((messages) => [...messages, incomingMessage]);
+      
     });
 
     socketRef.current.on(NEW_USER_EVENT, (username) => {
@@ -38,8 +40,13 @@ const useChat = (roomId, username) => {
         ...username,
       };
       //just quick fix for empty user events
+      console.log("current users: " + users.toString() + "\nadding: " + newUser.username);
       if(username){
-      setUsers(users.concat(newUser.username));}
+      setUsers((users)=> [...users,newUser]);
+      console.log("users is now: " + users.toString());
+    }
+
+
     });
 
     // Destroys the socket reference

@@ -52,7 +52,7 @@ function Login({ setUser, setUserName }) {
 
 
 function App() {
-  console.log(Realm);
+  // console.log(Realm);
   const stream_url = "https://theravetheory.evan-savage.com:8000";
   const [user, setUser] = React.useState(app.currentUser);
   const [username, setUserName] = React.useState();
