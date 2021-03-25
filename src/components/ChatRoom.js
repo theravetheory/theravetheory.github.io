@@ -20,8 +20,12 @@ const ChatRoom = (props) => {
   var username = props.username;
   var userColor = props.userColor;
   const { roomId } = props.roomId; // Gets roomId from URL
-  const { messages, users, sendMessage, updateUsers} = useChat(roomId,username); // Creates a websocket and manages messaging
+  const { messages, users, sendMessage, updateUsers } = useChat(
+    roomId,
+    username
+  ); // Creates a websocket and manages messaging
   const [newMessage, setNewMessage] = React.useState("");
+  const [showUsers, setShowUsers] = React.useState(false);
   // if(username){
   //   updateUsers(username);
   // }
@@ -39,6 +43,11 @@ const ChatRoom = (props) => {
   const handleSendMessage = () => {
     sendMessage(newMessage);
     setNewMessage("");
+  };
+
+  const userListOnClick = () => {
+    setShowUsers(!showUsers);
+    console.log("showUsers:" + showUsers);
   };
 
   // const listUsers = () => {
@@ -76,12 +85,18 @@ const ChatRoom = (props) => {
 
     <Draggable>
       <div className="chat-room-container" id="border">
-        {/* LIST OF USERS (make into its own component?) */}
-        <div>
-          {users.map((user) => (
-            <li>{user.username}</li>
-          ))}
-        </div>
+        <button onClick={userListOnClick}>show users</button>
+        {/* LIST OF USERS (make into its own component) */}
+        {showUsers ? (
+          <div className="users-list">
+            Online:
+            <ul>
+              {users.map((user, i) => (
+                <li key={i}>{user.username}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
         {/* <div className="border"> */}
 
         {/* <img src={border}></img> */}
@@ -97,7 +112,7 @@ const ChatRoom = (props) => {
               >
                 <span
                   className="message-username"
-                  style={{ color: colorList[1] }}
+                  // style={{ color: colorList[1] }}
                 >
                   {message.ownedByCurrentUser
                     ? "you" + ": "
