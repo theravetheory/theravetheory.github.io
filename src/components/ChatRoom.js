@@ -85,7 +85,6 @@ const ChatRoom = (props) => {
 
     <Draggable>
       <div className="chat-room-container" id="border">
-        <button onClick={userListOnClick}>show users</button>
         {/* LIST OF USERS (make into its own component) */}
         {showUsers ? (
           <div className="users-list">
@@ -100,7 +99,12 @@ const ChatRoom = (props) => {
         {/* <div className="border"> */}
 
         {/* <img src={border}></img> */}
-        <div class="messages-header">rave theory chat</div>
+        <div class="messages-header">
+          chat room
+          <button className="show-users-button" onClick={userListOnClick}>
+            {showUsers ? "hide users" : "show users"}
+          </button>
+        </div>
         <div className="messages-container">
           <ol className="messages-list no-list-numbers">
             {messages.map((message, i) => (
