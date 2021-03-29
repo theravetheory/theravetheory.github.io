@@ -91,7 +91,7 @@
     background-color: rgba(37, 37, 37,0.4);
     margin-left: auto;
     // text-align: left;
-    color: pink;
+    // color: pink;
 }
 
 
@@ -99,13 +99,13 @@
 .received-message {
     background-color: rgba(50,50,50,0.4);
     margin-right: auto;
-    color: yellow;
+    // color: yellow;
 }
 
 .send-message-button {
     font-size: 28px;
     font-weight: 600;
-    color: white;
+    color: rgb(255, 255, 255);
     background: #31a24c;
     padding: 24px 12px;
     border: none;
@@ -119,8 +119,8 @@
     background-color:#ececec;
 }
 
-.message-username{
-    // color: pink;
+.message-info{
+     color: pink;
 }
 
 .users-list{

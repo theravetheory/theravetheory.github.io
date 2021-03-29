@@ -3,7 +3,7 @@ import useChat from "../useChat.js";
 import Draggable from "react-draggable";
 import { Resizable, ResizableBox } from "react-resizable";
 import border from "../backgrounds/chat-border-1.png";
-
+import Moment from "react-moment";
 import "../scss/ChatRoom.scss";
 import "terminal.css";
 import { removeData } from "jquery";
@@ -61,7 +61,7 @@ const ChatRoom = (props) => {
   // };
 
   const scrollToBottom = () => {
-    messagesEnd.scrollIntoView({ behavior: "smooth" });
+    messagesEnd.scrollIntoView({ behavior: "auto" });
   };
 
   // const assignUserColor= (username,colorMapping) =>{
@@ -96,9 +96,7 @@ const ChatRoom = (props) => {
             </ul>
           </div>
         ) : null}
-        {/* <div className="border"> */}
 
-        {/* <img src={border}></img> */}
         <div class="messages-header">
           chat room
           <button className="show-users-button" onClick={userListOnClick}>
@@ -115,12 +113,14 @@ const ChatRoom = (props) => {
                 }`}
               >
                 <span
-                  className="message-username"
+                  className="message-info"
                   // style={{ color: colorList[1] }}
                 >
-                  {message.ownedByCurrentUser
-                    ? "you" + ": "
-                    : message.username + ": "}
+                  <Moment parse="x" format="hh:mm">{message.timeSent}</Moment>
+                  {
+                  message.ownedByCurrentUser
+                    ? ">>you" + ": "
+                    : ">>"+message.username + ": "}
                 </span>
                 {message.body}
               </li>

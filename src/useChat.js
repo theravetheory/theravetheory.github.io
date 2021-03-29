@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import socketIOClient from "socket.io-client";
 
+
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
 const NEW_USER_EVENT = "newUser"; // Name of the event
 const SOCKET_SERVER_URL = "http://localhost:4000";
@@ -64,6 +65,7 @@ const useChat = (roomId, username) => {
         body: messageBody,
         senderId: socketRef.current.id,
         username: username,
+        timeSent: Date.now(),
       });
     }
   };
