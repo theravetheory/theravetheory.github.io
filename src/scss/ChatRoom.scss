@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'SadMachine';
+    src: local('SadMachine'), url(../fonts/SadMachine.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'RedAlertINET';
+    src: local('RedAlertINET'), url(../fonts/RedAlertINET.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'RedAlertLAN';
+    src: local('RedAlertLAN'), url(../fonts/RedAlertLAN.ttf) format('truetype');
+  }
+
 #border {
     border: 40px solid transparent;
     // padding: 15px;
@@ -38,6 +53,8 @@
 }
 
 .messages-container {
+    font-family: RedAlertINET, sans-serif;
+    font-size: 20px;
     background: url("../backgrounds/chat-border-2.png");
     flex: 1;
     min-height: 200px;
