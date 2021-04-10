@@ -98,7 +98,7 @@ const ChatRoom = (props) => {
         ) : null}
 
         <div class="messages-header">
-          chat room
+          <span id="room-title">chat room</span>
           <button className="show-users-button" onClick={userListOnClick}>
             {showUsers ? "hide users" : "show users"}
           </button>
@@ -119,7 +119,7 @@ const ChatRoom = (props) => {
                   <Moment parse="x" format="hh:mm">{message.timeSent}</Moment>
                   {
                   message.ownedByCurrentUser
-                    ? ">>you" + ": "
+                    ? ">>you: "
                     : ">>"+message.username + ": "}
                 </span>
                 {message.body}

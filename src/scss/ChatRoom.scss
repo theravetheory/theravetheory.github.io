@@ -98,7 +98,7 @@
 .message-item {
     width: 100%;
     // margin: 8px;
-    padding: 6px 8px;
+    padding: 1px 8px;
     word-break: break-word;
     // border-radius: 4px;
     color: white;
@@ -116,6 +116,7 @@
 .received-message {
     background-color: rgba(50,50,50,0.4);
     margin-right: auto;
+    color:rgb(251, 212, 255);
     // color: yellow;
 }
 
@@ -136,8 +137,20 @@
     background-color:#ececec;
 }
 
-.message-info{
-     color: pink;
+#room-title{
+    padding-left: 9px;
+    padding-top: 9px;
+}
+
+// .message-info {
+//      color: pink;
+// }
+#my-info{
+    color: pink;
+}
+
+#other-user-info{
+    color: seagreen;
 }
 
 .users-list{
