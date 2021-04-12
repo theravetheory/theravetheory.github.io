@@ -1,7 +1,7 @@
 import logo_small from './logos/trt_logo.png';
 // import logosquaresmall from './logos/trtsquaresmall.png';
 // import icon from './logos/trt_favicon.png';
-import React from 'react';
+// import React from 'react';
 import './Fonts.css';
 import './scss/App.scss';
 import './scss/Scroll.scss';
@@ -10,6 +10,7 @@ import HomeBkgd from './components/VantaBkgd.js';
 import ThreeCube from './components/THREECube.js';
 import VRScene from './components/VRScene.js';
 import { Entity, Scene } from 'aframe-react';
+import React, {useState, useEffect} from 'react';
 
 import * as Realm from "realm-web";
 import $ from 'jquery';
@@ -52,9 +53,29 @@ function App() {
   const stream_url = "https://theravetheory.evan-savage.com:8000";
   const [user, setUser] = React.useState(app.currentUser);
   const [username, setUserName] = React.useState();
+  const [dataState, setDataState] = useState(null);
+
+  useEffect(() => {
+    // Update the document title using the browser API
+    callBackendAPI()
+      .then(res => setDataState(res.express))
+      .catch(err => console.log(err));
+  });
+
+  const callBackendAPI = async() => {
+    const response = await fetch('/express_backend');
+    const body = await response.json();
+
+    if (response.status !== 200) {
+      throw Error(body.message)
+    }
+    return body;
+  }
+
   return (
     <div className="app-wrapper">
       <VRScene />
+      <h1>{dataState}</h1>
       <div className="nav-wrapper">
         <nav className="navbar">
           <div className="icon-container">
