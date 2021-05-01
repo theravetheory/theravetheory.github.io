@@ -203,3 +203,9 @@ audio::-webkit-media-controls-panel:focus {
     transform: rotateY(30deg) translateY(0px);
   }
 }
+
+#webamp-container {
+  position: absolute;
+  left:50%;
+  top: 50%;
+}
