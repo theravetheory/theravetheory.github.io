@@ -12,7 +12,6 @@ import VRScene from "./components/VRScene.js";
 import Winamp from "./components/Winamp/Winamp.js";
 import { Entity, Scene } from "aframe-react";
 import React, { useState, useEffect } from "react";
-import Webamp from "webamp";
 
 import * as Realm from "realm-web";
 import $ from "jquery";
@@ -64,25 +63,15 @@ function App() {
   const [user, setUser] = React.useState(app.currentUser);
   const [username, setUserName] = React.useState();
   const [dataState, setDataState] = useState(null);
-  const [webampDivRef, setWebampDivRef] = useState(null);
+  // const [webampDivRef, setWebampDivRef] = useState(null);
 
   useEffect(() => {
     callBackendAPI()
       .then((res) => setDataState(res.express))
       .catch((err) => console.log(err));
 
-    if (webampDivRef == null) {
-      return;
-    }
-    const webamp = new Webamp({
-      initialTracks: [testTrack]
-    });
-    webamp.renderWhenReady(webampDivRef);
 
-    return () => {
-      webamp.dispose();
-    };
-  }, [webampDivRef]);
+  });
 
   // Update the document title using the browser API
 
@@ -96,8 +85,7 @@ function App() {
     return body;
   };
 
-  // const webamp = new Webamp({});
-  // webamp.renderWhenReady(document.getElementById('winamp-container'));
+
 
   return (
     <div className="app-wrapper">
