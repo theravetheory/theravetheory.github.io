@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Webamp from 'webamp';
-import { initialTracks } from './config';
+import { initialTracks, initialSkin } from './config';
 
 function Winamp({ onClose, onMinimize }) {
   const ref = useRef(null);
@@ -10,9 +10,12 @@ function Winamp({ onClose, onMinimize }) {
     if (!target) {
       return;
     }
+
     webamp.current = new Webamp({
-      initialTracks,
+      initialTracks: initialTracks,
+      initialSkin: initialSkin,
     });
+
     webamp.current.renderWhenReady(target).then(() => {
       target.appendChild(document.querySelector('#webamp'));
     });

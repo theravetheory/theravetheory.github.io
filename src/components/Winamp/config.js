@@ -1,4 +1,6 @@
 // import shadaffOomoo from "../../music/shadaff_oomoo.mp3";
+import orangeSkin from "../../skins/orange_skin.wsz";
+
 
 const urlBase = "https://raw.githubusercontent.com/theravetheory/theravetheory.github.io/winamp/src/music/playlist/"
 const songFileNames = ["++chao2.mp3",
@@ -39,6 +41,8 @@ var playlist=songFileNames.map((fileName)=>{
 }
 );
 
+var skin = {url: orangeSkin};
+
 
 // const playlist = [
 //     { url: urlBase+"++chao2.mp3" }
@@ -46,4 +50,4 @@ var playlist=songFileNames.map((fileName)=>{
 
 // const playList
 
-export const initialTracks = playlist;
+export const initialTracks = playlist, initialSkin = skin;

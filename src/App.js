@@ -16,11 +16,9 @@ import React, { useState, useEffect } from "react";
 import * as Realm from "realm-web";
 import $ from "jquery";
 
-import testMp3 from "./music/shadaff_oomoo.mp3";
 
 const REALM_APP_ID = "theravetheoryradio-rducr"; // e.g. myapp-abcde
 const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
-const testTrack = { url: testMp3 };
 
 // Create a component that displays the given user's details
 function UserDetail({ user, username, setUser }) {
