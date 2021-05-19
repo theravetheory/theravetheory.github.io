@@ -31,6 +31,8 @@ const ChatRoom = (props) => {
   // }
   // const [users, setUsers] = React.useState(["donimo", "ethan"]); // Message to be sent
 
+
+
   const handleNewMessageChange = (event) => {
     if (event.target.value.substr(-1) == "\n") {
       sendMessage(newMessage, username);
