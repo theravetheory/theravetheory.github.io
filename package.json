@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "icecast-metadata-js": "^0.3.2",
     "jquery": "^3.5.1",
+    "moment": "^2.29.1",
     "mongoose": "^5.12.10",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
@@ -43,9 +44,10 @@
     "socket.io": "^4.1.2",
     "socket.io-client": "^4.1.2",
     "three": "^0.125.2",
+    "util": "^0.10.4",
+    "uuid": "^8.3.2",
     "vanta": "^0.5.21",
-    "web-vitals": "^1.0.1",
-    "webpack-dev-server": "^3.11.0"
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "predeploy": "npm run build",
