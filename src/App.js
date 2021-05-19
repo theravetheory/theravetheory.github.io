@@ -1,7 +1,6 @@
 import logo_small from './logos/trt_logo.png';
 // import logosquaresmall from './logos/trtsquaresmall.png';
 // import icon from './logos/trt_favicon.png';
-// import React from 'react';
 import './Fonts.css';
 import './scss/App.scss';
 import './scss/Scroll.scss';
@@ -12,9 +11,10 @@ import VRScene from './components/VRScene.js';
 import { Entity, Scene } from 'aframe-react';
 import React, {useState, useEffect} from 'react';
 import socketClient  from "socket.io-client";
-
+import ChatRoom from "./components/ChatRoom.js";
 import * as Realm from "realm-web";
 import $ from 'jquery';
+import { ConsoleWriter } from 'istanbul-lib-report';
 
 const REALM_APP_ID = "theravetheoryradio-rducr"; // e.g. myapp-abcde
 const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
@@ -51,6 +51,7 @@ function Login({ setUser, setUserName }) {
 
 const SERVER = "http://127.0.0.1:5000";
 function App() {
+  // console.log(Realm);
   const stream_url = "https://theravetheory.evan-savage.com:8000";
   const [user, setUser] = React.useState(app.currentUser);
   const [username, setUserName] = React.useState();
@@ -82,7 +83,13 @@ function App() {
   return (
     <div className="app-wrapper">
       <VRScene />
-      <h1>{dataState}</h1>
+
+      <div>
+        <header className="App-header">
+          {user ? <UserDetail user={user} username={username} setUser={setUser}/> : <Login setUser={setUser} setUserName={setUserName}/>}
+        </header>
+      </div>
+
       <div className="nav-wrapper">
         <nav className="navbar">
           <div className="icon-container">
@@ -90,12 +97,10 @@ function App() {
           </div>
           <AudioPlayer streamurl={stream_url}/>
         </nav>
+
       </div>
-      <div>
-        <header className="App-header">
-          {user ? <UserDetail user={user} username={username} setUser={setUser}/> : <Login setUser={setUser} setUserName={setUserName}/>}
-        </header>
-      </div>
+      { user && <ChatRoom roomId="1" user={user} username={username} /> }
+
 
     </div>
 

@@ -1,0 +1,176 @@
+@font-face {
+    font-family: 'SadMachine';
+    src: local('SadMachine'), url(../fonts/SadMachine.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'RedAlertINET';
+    src: local('RedAlertINET'), url(../fonts/RedAlertINET.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'RedAlertLAN';
+    src: local('RedAlertLAN'), url(../fonts/RedAlertLAN.ttf) format('truetype');
+  }
+
+#border {
+    border: 40px solid transparent;
+    // padding: 15px;
+    border-image: url(../backgrounds/chat-border-2.png) 30 round;
+    // background: url(../backgrounds/chat-border-1.png);
+    // width: 150%;
+    // position: fixed;
+    // left: 10%;
+    // right: 0;
+    // top: 100%;
+    // bottom: 10%;
+    // display: flex;
+    // max-width:60vw;
+    // max-height:40vw;
+    // flex-direction: column;
+    // margin: 16px;
+
+}
+
+
+.chat-room-container {
+    // position: relative;
+    left: 10%;
+    // right: 0;
+    top: 0;
+    // bottom: 10%;
+    display: flex;
+    max-width:40vw;
+    max-height:30vw;
+    flex-direction: column;
+    margin: 16px;
+    position: absolute;
+    min-height: 400px;
+    min-width: 500px;
+    // z-index: 1000;
+    // padding-right: 160px;
+}
+
+.room-name {
+    margin-top: 0;
+}
+
+.messages-container {
+    font-family: RedAlertINET, sans-serif;
+    font-size: 20px;
+    background: url("../backgrounds/chat-border-2.png");
+    flex: 1;
+    min-height: 200px;
+    overflow: auto;
+    max-width: 100%;
+    border: 1px solid black;
+    // background-color: rgba(37, 37, 37,0.4);
+    border-radius: 0px 0px 0 0;
+}
+
+.messages-container ol li::before{
+    display: inline-block;
+    content: "";
+    font-size: 50%;
+}
+
+
+
+.messages-list {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+// .messages-list .message-item .my-message::before{
+//     content: "me";
+// }
+
+
+.new-message-input-field {
+    max-width: 100%;
+    height: 100px;
+    max-height: 50%;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(37, 37, 37,1);
+    //padding: 8px 12px;
+    resize: none;
+}
+
+.message-item {
+    width: 100%;
+    // margin: 8px;
+    padding: 1px 8px;
+    word-break: break-word;
+    // border-radius: 4px;
+    color: white;
+}
+
+.my-message {
+    background-color: rgba(37, 37, 37,0.4);
+    margin-left: auto;
+    // text-align: left;
+    // color: pink;
+}
+
+
+
+.received-message {
+    background-color: rgba(50,50,50,0.4);
+    margin-right: auto;
+    color:rgb(251, 212, 255);
+    // color: yellow;
+}
+
+.send-message-button {
+    font-size: 28px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    background: #31a24c;
+    padding: 24px 12px;
+    border: none;
+}
+
+.messages-container, .new-message-input-field, .send-message-button {
+    border-color: #9a9a9a;
+}
+
+.messages-header {
+    background-color:#ececec;
+}
+
+#room-title{
+    padding-left: 9px;
+    padding-top: 9px;
+}
+
+// .message-info {
+//      color: pink;
+// }
+#my-info{
+    color: pink;
+}
+
+#other-user-info{
+    color: seagreen;
+}
+
+.users-list{
+    background-color:rgba(37, 37, 37,1);
+    color: whitesmoke;
+    height: 66%;
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    margin-top: 22px;
+    // margin-bottom: 200px;
+}
+
+.show-users-button{
+    float: right;
+}
