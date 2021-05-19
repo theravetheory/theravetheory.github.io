@@ -4,7 +4,7 @@ import socketIOClient from "socket.io-client";
 
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
 const NEW_USER_EVENT = "newUser"; // Name of the event
-const SOCKET_SERVER_URL = "http://localhost:4000";
+const SOCKET_SERVER_URL = "http://192.168.1.194:5000";
 
 const useChat = (roomId, username) => {
   const [messages, setMessages] = useState([]); // Sent and received messages
@@ -33,7 +33,7 @@ const useChat = (roomId, username) => {
       };
 
       setMessages((messages) => [...messages, incomingMessage]);
-      
+
     });
 
     socketRef.current.on(NEW_USER_EVENT, (username) => {
@@ -46,6 +46,10 @@ const useChat = (roomId, username) => {
       setUsers((users)=> [...users,newUser]);
       console.log("users is now: " + users.toString());
     }
+
+    socketRef.current.on('connection', (messages) => {
+      setMessages(messages)
+    })
 
 
     });
@@ -60,12 +64,14 @@ const useChat = (roomId, username) => {
   // Sends a message to the server that
   // forwards it to all users in the same room
   const sendMessage = (messageBody, username) => {
+    var timeSent = Date.now();
     if (messageBody) {
       socketRef.current.emit(NEW_CHAT_MESSAGE_EVENT, {
-        body: messageBody,
-        senderId: socketRef.current.id,
-        username: username,
-        timeSent: Date.now(),
+        'body': messageBody,
+        'senderId': socketRef.current.id,
+        'username': username,
+        'timeSent': timeSent,
+        'timeSentReadable': new Date(timeSent).toISOString()
       });
     }
   };
