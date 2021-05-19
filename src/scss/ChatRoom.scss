@@ -36,14 +36,17 @@
 .chat-room-container {
     // position: relative;
     left: 10%;
-    right: 0;
+    // right: 0;
     top: 0;
-    bottom: 10%;
+    // bottom: 10%;
     display: flex;
     max-width:40vw;
     max-height:30vw;
     flex-direction: column;
     margin: 16px;
+    position: absolute;
+    min-height: 400px;
+    min-width: 500px;
     // z-index: 1000;
     // padding-right: 160px;
 }
@@ -76,7 +79,7 @@
 .messages-list {
     list-style-type: none;
     padding: 0;
-    
+
 }
 
 // .messages-list .message-item .my-message::before{
@@ -156,7 +159,7 @@
 .users-list{
     background-color:rgba(37, 37, 37,1);
     color: whitesmoke;
-    height: 66%; 
+    height: 66%;
     width: 160px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
@@ -171,7 +174,3 @@
 .show-users-button{
     float: right;
 }
-
-
- 
-

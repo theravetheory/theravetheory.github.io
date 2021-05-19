@@ -57,18 +57,18 @@ function App() {
   const [user, setUser] = React.useState(app.currentUser);
   const [username, setUserName] = React.useState();
 
- 
+
 
   return (
     <div className="app-wrapper">
       <HomeBkgd />
-      
+
       <div>
         <header className="App-header">
           {user ? <UserDetail user={user} username={username} setUser={setUser}/> : <Login setUser={setUser} setUserName={setUserName}/>}
         </header>
       </div>
-      
+
       <div className="nav-wrapper">
         <nav className="navbar">
           <div className="icon-container">
@@ -76,8 +76,9 @@ function App() {
           </div>
           <AudioPlayer streamurl={stream_url}/>
         </nav>
-      { user && <ChatRoom roomId="1" user={user} username={username} /> }
+
       </div>
+      { user && <ChatRoom roomId="1" user={user} username={username} /> }
 
 
     </div>
