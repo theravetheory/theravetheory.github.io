@@ -5,7 +5,7 @@ import { Resizable, ResizableBox } from "react-resizable";
 import border from "../backgrounds/chat-border-1.png";
 import Moment from "react-moment";
 import "../scss/ChatRoom.scss";
-import "terminal.css";
+// import "terminal.css";
 import { removeData } from "jquery";
 
 var messagesEnd;
