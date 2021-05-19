@@ -11,6 +11,7 @@ import ThreeCube from './components/THREECube.js';
 import VRScene from './components/VRScene.js';
 import { Entity, Scene } from 'aframe-react';
 import React, {useState, useEffect} from 'react';
+import socketClient  from "socket.io-client";
 
 import * as Realm from "realm-web";
 import $ from 'jquery';
@@ -48,12 +49,16 @@ function Login({ setUser, setUserName }) {
   );
 }
 
-
+const SERVER = "http://127.0.0.1:5000";
 function App() {
   const stream_url = "https://theravetheory.evan-savage.com:8000";
   const [user, setUser] = React.useState(app.currentUser);
   const [username, setUserName] = React.useState();
   const [dataState, setDataState] = useState(null);
+  var socket = socketClient (SERVER);
+  socket.on('connection', () => {
+          console.log(`I'm connected with the back-end`);
+  });
 
   {
   // useEffect(() => {

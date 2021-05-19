@@ -35,10 +35,13 @@
     "react-scripts": "4.0.2",
     "react-three": "^0.8.0",
     "realm-web": "^1.2.1",
+    "sass": "^1.32.13",
     "socket.io": "^4.1.2",
+    "socket.io-client": "^4.1.2",
     "three": "^0.125.2",
     "vanta": "^0.5.21",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -49,7 +52,7 @@
     "eject": "react-scripts eject",
     "dev": "concurrently --kill-others-on-fail \"nodemon server.js\" \"react-scripts start\""
   },
-  "proxy": "http://localhost:4000/",
+  "proxy": "http://localhost:5000/",
   "eslintConfig": {
     "extends": [
       "react-app",

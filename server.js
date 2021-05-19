@@ -16,8 +16,6 @@ mongoose.connect(`mongodb://localhost:${process.env.MONGODB_URI}/theravetheorych
 
 const port = process.env.PORT || 4000;
 
-console.log('peepee');
-
 // console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
