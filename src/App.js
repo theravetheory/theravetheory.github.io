@@ -22,12 +22,12 @@ const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
 // Create a component that displays the given user's details
 function UserDetail({ user, username, setUser}) {
   const logoutAnonymous = async () => {
-    await app.currentUser.logOut();
+    // await app.currentUser.logOut();
     setUser(false);
   }
   return (
     <div className="login-wrapper">
-      <h1>Logged in with anonymous id: <span>{user.id}</span> and username <span>{username}</span></h1>
+      <h1>Logged in with username <span>{username}</span></h1>
       <button onClick={logoutAnonymous}>Log Out</button>
     </div>
   );
@@ -38,8 +38,8 @@ function Login({ setUser, setUserName }) {
   const loginAnonymous = async () => {
     console.log($('#login-name input').val());
     setUserName($('#login-name input').val());
-    const user = await app.logIn(Realm.Credentials.anonymous());
-    setUser(user);
+    // const user = await app.logIn(Realm.Credentials.anonymous());
+    setUser(true);
   };
   return (
     <div className="login-wrapper">
@@ -53,7 +53,7 @@ const SERVER = "http://127.0.0.1:5000";
 function App() {
   // console.log(Realm);
   const stream_url = "https://theravetheory.evan-savage.com:8000";
-  const [user, setUser] = React.useState(app.currentUser);
+  const [user, setUser] = React.useState();
   const [username, setUserName] = React.useState();
   const [dataState, setDataState] = useState(null);
   var socket = socketClient (SERVER);
