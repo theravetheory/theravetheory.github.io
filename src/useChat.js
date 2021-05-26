@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import socketIOClient from "socket.io-client";
-
+import config from './config';
 
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
 const NEW_USER_EVENT = "newUser"; // Name of the event
-const SOCKET_SERVER_URL = "http://192.168.1.194:5000";
+const SOCKET_SERVER_URL = config[process.env.NODE_ENV].endpoint;
 
 const useChat = (roomId, username) => {
   const [messages, setMessages] = useState([]); // Sent and received messages

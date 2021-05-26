@@ -58,7 +58,7 @@
     "eject": "react-scripts eject",
     "dev": "concurrently --kill-others-on-fail \"nodemon server.js\" \"react-scripts start\""
   },
-  "proxy": "http://localhost:5000/",
+  "proxy": "http://159.203.115.224:5000/",
   "eslintConfig": {
     "extends": [
       "react-app",

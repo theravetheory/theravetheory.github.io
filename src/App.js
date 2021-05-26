@@ -1,6 +1,7 @@
 import logo_small from './logos/trt_logo.png';
 // import logosquaresmall from './logos/trtsquaresmall.png';
 // import icon from './logos/trt_favicon.png';
+import config from './config';
 import './Fonts.css';
 import './scss/App.scss';
 import './scss/Scroll.scss';
@@ -10,7 +11,7 @@ import ThreeCube from './components/THREECube.js';
 import VRScene from './components/VRScene.js';
 import { Entity, Scene } from 'aframe-react';
 import React, {useState, useEffect} from 'react';
-import socketClient  from "socket.io-client";
+import socketIOClient from "socket.io-client";
 import ChatRoom from "./components/ChatRoom.js";
 import * as Realm from "realm-web";
 import $ from 'jquery';
@@ -49,18 +50,26 @@ function Login({ setUser, setUserName }) {
   );
 }
 
-const SERVER = "http://127.0.0.1:5000";
+const SERVER = "http://159.203.115.224:5000";
 function App() {
   // console.log(Realm);
   const stream_url = "https://theravetheory.evan-savage.com:8000";
   const [user, setUser] = React.useState();
   const [username, setUserName] = React.useState();
   const [dataState, setDataState] = useState(null);
-  var socket = socketClient (SERVER);
-  socket.on('connection', () => {
-          console.log(`I'm connected with the back-end`);
-  });
-
+  //const socket = io(config[process.env.NODE_ENV].endpoint, { transports: ["websocket"] });
+  //console.log('Socket.io connecting on ' + config[process.env.NODE_ENV].endpoint);
+  //socket.on('connection', () => {
+  //        console.log(`I'm connected with the back-end`);
+  //});
+  
+  useEffect(() => {
+	  const socket = socketIOClient(config[process.env.NODE_ENV].endpoint);
+	  console.log('Socket.io connecting on ' + config[process.env.NODE_ENV].endpoint);
+	  socket.on('connection', () => {
+          	console.log(`I'm connected with the back-end`);
+  	  });
+  }, []);
   {
   // useEffect(() => {
   //   // Update the document title using the browser API
