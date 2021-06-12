@@ -10,6 +10,7 @@ import HomeBkgd from "./components/VantaBkgd.js";
 import ThreeCube from "./components/THREECube.js";
 import VRScene from "./components/VRScene.js";
 import Winamp from "./components/Winamp/Winamp.js";
+import Blog from "./components/Blog.js";
 import { Entity, Scene } from "aframe-react";
 import React, { useState, useEffect } from "react";
 
@@ -88,8 +89,10 @@ function App() {
   return (
     <div className="app-wrapper">
       {/* <div id="webamp-container" ref={setWebampDivRef} />; */}
-      <Winamp />
+      {/* <Winamp /> */}
+      
       <VRScene />
+      <Blog/>
       <h1>{dataState}</h1>
       <div className="nav-wrapper">
         <nav className="navbar">
