@@ -92,7 +92,7 @@ function App() {
       {/* <Winamp /> */}
       
       <VRScene />
-      <Blog/>
+      <Blog/> 
       <h1>{dataState}</h1>
       <div className="nav-wrapper">
         <nav className="navbar">

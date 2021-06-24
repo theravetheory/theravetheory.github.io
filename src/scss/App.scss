@@ -210,3 +210,13 @@ audio::-webkit-media-controls-panel:focus {
   top: 10%;
   z-index: 1000;
 }
+
+.blog-window{
+  // pointer-events: none;
+  background-color: #5b685b;
+  position: absolute;
+  padding-top: 40px;
+  left:50%;
+  top: 10%;
+  z-index: 1000;
+}
