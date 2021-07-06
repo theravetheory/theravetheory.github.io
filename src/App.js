@@ -62,9 +62,13 @@ function App() {
   //socket.on('connection', () => {
   //        console.log(`I'm connected with the back-end`);
   //});
-  
+
   useEffect(() => {
-	  const socket = socketIOClient(config[process.env.NODE_ENV].endpoint);
+	  const socket = socketIOClient(config[process.env.NODE_ENV].endpoint, {
+      secure:true,
+      reconnect: true,
+      rejectUnauthorized : false
+    });
 	  console.log('Socket.io connecting on ' + config[process.env.NODE_ENV].endpoint);
 	  socket.on('connection', () => {
           	console.log(`I'm connected with the back-end`);
