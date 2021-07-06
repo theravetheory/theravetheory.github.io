@@ -54,11 +54,12 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-production": "react-scripts build && scp -r ./build/* root@159.203.115.224:/var/www/theravetheory.net/html/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "concurrently --kill-others-on-fail \"nodemon server.js\" \"react-scripts start\""
   },
-  "proxy": "http://159.203.115.224:5000/",
+  "proxy": "http://localhost:5000/",
   "eslintConfig": {
     "extends": [
       "react-app",
