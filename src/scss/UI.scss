@@ -1,0 +1,86 @@
+
+.top-scroll-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  .top-scroll-cover {
+    position: absolute;
+    width: 400px;
+    right: 5%;
+  }
+  .top-scroll {
+    width: 80%;
+    height: 35px;
+    background: linear-gradient(to right, #04ed00 1px, transparent 1px);
+    background-size: 2px;
+    position: absolute;
+    right: 0;
+    border-left: 10px solid #04ed00;
+    border-bottom: 10px solid #04ed00;
+  }
+}
+
+.eva-warning {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  width: 80px;
+}
+
+.right-chat-wrapper {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  .right-chat-window {
+    width: 370px;
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+  }
+  .right-chat-window-bkgd {
+    position: absolute;
+    z-index: 1;
+    top: 40px;
+    right: 5px;
+    width: 330px;
+  }
+}
+
+.bottom-right-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  .bottom-right-bar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 550px;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .bottom-right-bar-bkgd {
+    right: -20px;
+    width: 550px;
+    top: -60px;
+    position: absolute;
+  }
+}
+
+.main-left-wrapper {
+  position: absolute;
+  top: 0;
+  .main-left-window {
+    height: calc(100vh - 10px);
+  }
+}
+
+
+
+// TEMPORARY
+
+.a-enter-vr-button {
+  display: none;
+}
