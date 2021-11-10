@@ -84,71 +84,73 @@ const ChatRoom = (props) => {
 
   return (
     //TODO: MAKE MINIMIZABLE
-
-    <Draggable>
-      <div className="chat-room-container" id="border">
-        {/* LIST OF USERS (make into its own component) */}
-        {showUsers ? (
-          <div className="users-list">
-            Online:
-            <ul>
-              {users.map((user, i) => (
-                <li key={i}>{user.username}</li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-
-        <div class="messages-header">
-          <span id="room-title">chat room</span>
-          <button className="show-users-button" onClick={userListOnClick}>
-            {showUsers ? "hide users" : "show users"}
-          </button>
-        </div>
-        <div className="messages-container">
-          <ol className="messages-list no-list-numbers">
-            {messages.map((message, i) => (
-              <li
-                key={i}
-                className={`message-item ${
-                  message.ownedByCurrentUser ? "my-message" : "received-message"
-                }`}
-              >
-                <span
-                  className="message-info"
-                  // style={{ color: colorList[1] }}
-                >
-                  <Moment parse="x" format="hh:mm">{message.timeSent}</Moment>
-                  {
-                  message.ownedByCurrentUser
-                    ? ">>you: "
-                    : ">>"+message.username + ": "}
-                </span>
-                {message.body}
-              </li>
+    <>
+    <div className="user-name-container">{username}</div>
+    <div className="chat-room-container" id="border">
+      {/* LIST OF USERS (make into its own component) */}
+      {showUsers ? (
+        <div className="users-list">
+          Online:
+          <ul>
+            {users.map((user, i) => (
+              <li key={i}>{user.username}</li>
             ))}
-          </ol>
-          {/*dummy div for snapping scrollbar*/}
-          <div
-            style={{ float: "left", clear: "both" }}
-            ref={(el) => {
-              messagesEnd = el;
-            }}
-          ></div>
+          </ul>
         </div>
-        <textarea
-          value={newMessage}
-          //onKeyPress={handleKeyPress}
-          onChange={handleNewMessageChange}
-          placeholder="Write message..."
-          className="new-message-input-field"
-        />
-        {/* <button onClick={handleSendMessage} className="send-message-button">
-          Send
-        </button> */}
+      ) : null}
+
+      {
+        //<div class="messages-header">
+        //<span id="room-title">chat room</span>
+        //<button className="show-users-button" onClick={userListOnClick}>
+        //  {showUsers ? "hide users" : "show users"}
+        //</button>
+      //</div>
+      }
+      <div className="messages-container">
+        <ol className="messages-list no-list-numbers">
+          {messages.map((message, i) => (
+            <li
+              key={i}
+              className={`message-item ${
+                message.ownedByCurrentUser ? "my-message" : "received-message"
+              }`}
+            >
+              <span
+                className="message-info"
+                // style={{ color: colorList[1] }}
+              >
+                <Moment parse="x" format="hh:mm">{message.timeSent}</Moment>
+                {
+                message.ownedByCurrentUser
+                  ? ">>you: "
+                  : ">>"+message.username + ": "}
+              </span>
+              {message.body}
+            </li>
+          ))}
+        </ol>
+        {/*dummy div for snapping scrollbar*/}
+        <div
+          style={{ float: "left", clear: "both" }}
+          ref={(el) => {
+            messagesEnd = el;
+          }}
+        ></div>
       </div>
-      {/* </div> */}
-    </Draggable>
+      <textarea
+        value={newMessage}
+        //onKeyPress={handleKeyPress}
+        onChange={handleNewMessageChange}
+        placeholder="Write message..."
+        className="new-message-input-field"
+      />
+      {/* <button onClick={handleSendMessage} className="send-message-button">
+        Send
+      </button> */}
+    </div>
+    </>
+
   );
 };
 

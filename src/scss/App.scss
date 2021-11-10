@@ -110,12 +110,12 @@ html, body, #root {
   .scroll-left {
     flex: 1;
     // margin-left: 50px;
-    max-width: 500px;
+    max-width: 537px;
     font-size: 1.2rem;
     color: $hud-text-green;
-    border-left: 3px solid $hud-text-green;
+    // border-left: 3px solid $hud-text-green;
     // border-right: 3px solid $hud-text-green;
-    border-top: 3px solid $hud-text-green;
+    // border-top: 3px solid $hud-text-green;
     border-radius: 6px 0px 0 0;
     a {
       color: $hud-text-yellow;
@@ -186,6 +186,11 @@ html, body, #root {
 #stream-player:focus {
   outline: none;
 }
+
+
+
+
+
 
 audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
   background-color: #dbd9d2;

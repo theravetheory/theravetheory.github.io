@@ -1,10 +1,20 @@
 import logo_small from './logos/trt_logo.png';
 // import logosquaresmall from './logos/trtsquaresmall.png';
 // import icon from './logos/trt_favicon.png';
+
+import top_scroll_cover from './ui_layers/top_scroll_cover.png';
+import eva_warning from './ui_layers/eva_warning.png';
+import right_chat_window_skin from './ui_layers/right_chat_window_skin.png';
+import right_chat_window_bkgd from './ui_layers/right_chat_window_bkgd.png';
+import bottom_right_bar_skin from './ui_layers/bottom_right_bar_skin.png';
+import bottom_right_bar_bkgd from './ui_layers/bottom_right_bar_bkgd.png';
+import main_left_bar from './ui_layers/main_left_bar.png';
+
 import config from './config';
 import './Fonts.css';
 import './scss/App.scss';
 import './scss/Scroll.scss';
+import './scss/UI.scss';
 import AudioPlayer from './components/AudioPlayer.js';
 import HomeBkgd from './components/VantaBkgd.js';
 import ThreeCube from './components/THREECube.js';
@@ -96,6 +106,27 @@ function App() {
   return (
     <div className="app-wrapper">
       <VRScene />
+      <div className="top-scroll-wrapper">
+        <div className="top-scroll">
+
+        </div>
+        <img className="top-scroll-cover" src={top_scroll_cover} />
+      </div>
+      {
+        // <div className="main-left-wrapper">
+        //   <img className="main-left-window" src={main_left_bar} />
+        // </div>
+      }
+      <img className="eva-warning" src={eva_warning} />
+      <div className="right-chat-wrapper">
+        <img className="right-chat-window-bkgd" src={right_chat_window_bkgd} />
+        <img className="right-chat-window" src={right_chat_window_skin} />
+        { user && <ChatRoom roomId="1" user={user} username={username} /> }
+      </div>
+      <div class="bottom-right-wrapper">
+        <img className="bottom-right-bar" src={bottom_right_bar_skin} />
+        <img className="bottom-right-bar-bkgd" src={bottom_right_bar_bkgd} />
+      </div>
 
       <div>
         <header className="App-header">
@@ -103,6 +134,7 @@ function App() {
         </header>
       </div>
 
+      {
       <div className="nav-wrapper">
         <nav className="navbar">
           <div className="icon-container">
@@ -112,7 +144,8 @@ function App() {
         </nav>
 
       </div>
-      { user && <ChatRoom roomId="1" user={user} username={username} /> }
+      }
+
 
 
     </div>
