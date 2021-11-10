@@ -11,7 +11,7 @@ function AudioEmbed(name, description, genre) {
   return (
     <>
     <audio controls id="stream-player">
-      <source src="https://theravetheory.evan-savage.com:8000/stream" type="audio/mpeg"></source>
+      <source src="https://stream.theravetheory.net:8000/stream" type="audio/mpeg"></source>
     </audio>
     <div className="scroll-left">
       <p>Now playing: {name} - {description} [{genre}]</p>
