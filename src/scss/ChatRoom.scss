@@ -34,21 +34,21 @@
 
 
 .chat-room-container {
-    // position: relative;
-    left: 10%;
-    // right: 0;
-    top: 0;
-    // bottom: 10%;
-    display: flex;
-    max-width:40vw;
-    max-height:30vw;
-    flex-direction: column;
-    margin: 16px;
-    position: absolute;
-    min-height: 400px;
-    min-width: 500px;
-    // z-index: 1000;
-    // padding-right: 160px;
+  right: 0;
+  bottom: 120px;
+  display: flex;
+  max-width: 550px;
+  max-height: 30vw;
+  flex-direction: column;
+  /* margin: 16px; */
+  position: absolute;
+  min-height: 400px;
+  min-width: 550px;
+  border-left: 3px solid #48ed00;
+  border-top: 3px solid #48ed00;
+  border-bottom: 3px solid #48ed00;
+  border-radius: 6px 0 0 6px;
+  overflow: hidden;
 }
 
 .room-name {
@@ -56,16 +56,19 @@
 }
 
 .messages-container {
-    font-family: RedAlertINET, sans-serif;
-    font-size: 20px;
-    background: url("../backgrounds/chat-border-2.png");
+    font-family: catv, sans-serif;
+    font-size: 16px;
+    // background: url("../backgrounds/chat-border-2.png");
     flex: 1;
     min-height: 200px;
+    max-height: 312px;
     overflow: auto;
     max-width: 100%;
-    border: 1px solid black;
+    border-top: 3px solid #48ed00;
+    border-bottom: 3px solid #48ed00;
     // background-color: rgba(37, 37, 37,0.4);
     border-radius: 0px 0px 0 0;
+    background-color: #00000054;
 }
 
 .messages-container ol li::before{
@@ -79,7 +82,7 @@
 .messages-list {
     list-style-type: none;
     padding: 0;
-
+    margin-bottom: 0;
 }
 
 // .messages-list .message-item .my-message::before{
@@ -89,13 +92,18 @@
 
 .new-message-input-field {
     max-width: 100%;
-    height: 100px;
-    max-height: 50%;
-    font-size: 20px;
+    height: 60px;
+    // max-height: 50%;
+    font-size: 18px;
     color: white;
     background-color: rgba(37, 37, 37,1);
     //padding: 8px 12px;
     resize: none;
+    outline: none;
+    padding-left: 9px;
+    padding-top: 5px;
+    font-family: 'catv';
+    border: none;
 }
 
 .message-item {
@@ -108,7 +116,7 @@
 }
 
 .my-message {
-    background-color: rgba(37, 37, 37,0.4);
+    // background-color: rgba(37, 37, 37,0.4);
     margin-left: auto;
     // text-align: left;
     // color: pink;
@@ -133,16 +141,23 @@
 }
 
 .messages-container, .new-message-input-field, .send-message-button {
-    border-color: #9a9a9a;
+    // border-color: #9a9a9a;
 }
 
 .messages-header {
-    background-color:#ececec;
+    // background-color:#ececec;
+    color: #48ed00;
+    font-family: 'catv';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #room-title{
     padding-left: 9px;
-    padding-top: 9px;
+    // padding-top: 9px;
 }
 
 // .message-info {
@@ -173,4 +188,9 @@
 
 .show-users-button{
     float: right;
+    background-color: #48ed00;
+    color: black;
+    border: none;
+    margin-right: 9px;
+    font-family: 'catv';
 }

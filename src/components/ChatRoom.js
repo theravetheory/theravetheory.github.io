@@ -85,8 +85,7 @@ const ChatRoom = (props) => {
   return (
     //TODO: MAKE MINIMIZABLE
 
-    <Draggable>
-      <div className="chat-room-container" id="border">
+      <div className="chat-room-container">
         {/* LIST OF USERS (make into its own component) */}
         {showUsers ? (
           <div className="users-list">
@@ -121,8 +120,8 @@ const ChatRoom = (props) => {
                   <Moment parse="x" format="hh:mm">{message.timeSent}</Moment>
                   {
                   message.ownedByCurrentUser
-                    ? ">>you: "
-                    : ">>"+message.username + ": "}
+                    ? " - you: "
+                    : " - "+message.username + ": "}
                 </span>
                 {message.body}
               </li>
@@ -147,8 +146,6 @@ const ChatRoom = (props) => {
           Send
         </button> */}
       </div>
-      {/* </div> */}
-    </Draggable>
   );
 };
 
