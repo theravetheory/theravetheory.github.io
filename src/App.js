@@ -8,6 +8,7 @@ import './scss/Scroll.scss';
 import AudioPlayer from './components/AudioPlayer.js';
 import HomeBkgd from './components/VantaBkgd.js';
 import ThreeCube from './components/THREECube.js';
+import Miami from './components/Miami.js';
 import VRScene from './components/VRScene.js';
 import { Entity, Scene } from 'aframe-react';
 import React, {useState, useEffect} from 'react';
@@ -16,6 +17,8 @@ import ChatRoom from "./components/ChatRoom.js";
 import * as Realm from "realm-web";
 import $ from 'jquery';
 import { ConsoleWriter } from 'istanbul-lib-report';
+import * as THREE from "three";
+
 
 const REALM_APP_ID = "theravetheoryradio-rducr"; // e.g. myapp-abcde
 const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
@@ -57,6 +60,9 @@ function App() {
   const [user, setUser] = React.useState();
   const [username, setUserName] = React.useState();
   const [dataState, setDataState] = useState(null);
+
+
+
   //const socket = io(config[process.env.NODE_ENV].endpoint, { transports: ["websocket"] });
   //console.log('Socket.io connecting on ' + config[process.env.NODE_ENV].endpoint);
   //socket.on('connection', () => {
@@ -95,7 +101,6 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      <VRScene />
 
       <div>
         <header className="App-header">
@@ -114,6 +119,7 @@ function App() {
       </div>
       { user && <ChatRoom roomId="1" user={user} username={username} /> }
 
+      <Miami />
 
     </div>
 
