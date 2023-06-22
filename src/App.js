@@ -52,14 +52,13 @@ function Login({ setUser, setUserName }) {
 const SERVER = "http://127.0.0.1:5000";
 function App() {
   // console.log(Realm);
-  const stream_url = "https://theravetheory.evan-savage.com:8000";
-  const [user, setUser] = React.useState();
-  const [username, setUserName] = React.useState();
-  const [dataState, setDataState] = useState(null);
-  var socket = socketClient (SERVER);
-  socket.on('connection', () => {
-          console.log(`I'm connected with the back-end`);
-  });
+  const streamURL = "http://54.163.26.105:8000";
+  const [user, setUser] = useState();
+  const [username, setUserName] = useState();
+  // var socket = socketClient (SERVER);
+  // socket.on('connection', () => {
+  //         console.log(`I'm connected with the back-end`);
+  // });
 
   {
   // useEffect(() => {
@@ -82,7 +81,7 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      <VRScene />
+      {/*<VRScene />*/}
 
       <div>
         <header className="App-header">
@@ -95,7 +94,7 @@ function App() {
           <div className="icon-container">
             <ThreeCube imagetexture={logo_small}/>
           </div>
-          <AudioPlayer streamurl={stream_url}/>
+          <AudioPlayer streamURL={streamURL}/>
         </nav>
 
       </div>
